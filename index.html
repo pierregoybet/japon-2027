@@ -802,8 +802,7 @@ render();
   let userNs;[db,sampleFn,downloads,userNs]=await Promise.all([use("db"),use("sample"),use("downloads"),use("user")]);
   if(!db){render();const b=$("#banner");b.hidden=false;b.textContent="Mode aperçu : la base Firebase n'est pas encore configurée (voir config.js), rien n'est enregistré.";return}
   live=true;
-  try{isAdmin=userNs?!!(await userNs.isOwner()):false}catch(e){isAdmin=false}
-  if(isAdmin){me="p1";try{localStorage.setItem("tabi-me","p1")}catch(_){}}else if(me==="p1"){me=null}
+  isAdmin=true;
   render();
   COLS.forEach(col=>db.collection(col).onSnapshot(s=>{S[col]=s.docs.map(d=>({id:d.id,...d.data()}));refresh()},()=>toast("Connexion perdue, recharge la page")));
   db.doc("trip/settings").onSnapshot(s=>{if(s.exists){const d=s.data();settings={...DEFAULT_SETTINGS,...d,names:{...DEFAULT_SETTINGS.names,...(d.names||{})},stays:{...DEFAULT_SETTINGS.stays,...(d.stays||{})}}}refresh()});
