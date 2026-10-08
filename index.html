@@ -1,0 +1,816 @@
+<!doctype html>
+<html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#1d3a82"><link rel="icon" href="logo.svg"><link rel="apple-touch-icon" href="logo.png">
+<style>[hidden]{display:none!important}:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0}img{max-width:100%}</style>
+</head><body>
+<title>Japon 2027</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@500;800&family=Zen+Maru+Gothic:wght@400;500;700&display=swap">
+<style>
+/* Layout: carnet de voyage japonais — bandeau seigaiha indigo, papier washi, tampons hanko vermillon, onglets kanji en bas, bouton + flottant */
+:root{
+  --washi:#f5efe2; --paper:#fffbf3; --sumi:#2b2521; --muted:#7a6d60; --line:#e5dac6; --soft:#efe6d4;
+  --shu:#c63a22; --shu-soft:#f8e3dc; --ai:#24386a; --ai-2:#3a5290; --link:#2d4f9c;
+  --osaka:#d4612a; --hiroshima:#4c8758; --kyoto:#7b3f8e; --tokyo:#2d4f9c;
+  --good:#4c8758; --meh:#b98a2b; --bad:#c63a22; --onink:#fffbf3;
+  --display:"Shippori Mincho B1","Hiragino Mincho ProN","Yu Mincho",Georgia,serif;
+  --body:"Zen Kaku Gothic New","Hiragino Sans",system-ui,-apple-system,sans-serif;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --washi:#18151a; --paper:#221e24; --sumi:#f1e9dc; --muted:#a99c8e; --line:#3a3338; --soft:#2c2730;
+  --shu:#ec6a4f; --shu-soft:#3b2421; --ai:#1c2a52; --ai-2:#2c3f73; --link:#8fa8ec;
+  --osaka:#f08a52; --hiroshima:#79b886; --kyoto:#bb84cc; --tokyo:#7f9ce6;
+  --good:#79b886; --meh:#e0b55a; --bad:#ec6a4f; --onink:#fffbf3; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --washi:#18151a; --paper:#221e24; --sumi:#f1e9dc; --muted:#a99c8e; --line:#3a3338; --soft:#2c2730;
+  --shu:#ec6a4f; --shu-soft:#3b2421; --ai:#1c2a52; --ai-2:#2c3f73; --link:#8fa8ec;
+  --osaka:#f08a52; --hiroshima:#79b886; --kyoto:#bb84cc; --tokyo:#7f9ce6;
+  --good:#79b886; --meh:#e0b55a; --bad:#ec6a4f; --onink:#fffbf3; color-scheme:dark}
+*{box-sizing:border-box}
+html,body{background:var(--washi);color:var(--sumi)}
+body{font-family:var(--body);font-size:15px;line-height:1.55;padding-inline:16px;padding-block:0 110px}
+.wrap{max-width:720px;margin:0 auto}
+button,input,select,textarea{font:inherit;color:inherit}
+button{cursor:pointer}
+:focus-visible{outline:2px solid var(--shu);outline-offset:2px}
+h1,h2,h3{font-family:var(--display);font-weight:800;text-wrap:balance;margin:0}
+.seigaiha{background-color:var(--ai);background-image:
+ radial-gradient(circle at 100% 150%,var(--ai) 24%,var(--ai-2) 24%,var(--ai-2) 28%,var(--ai) 28%,var(--ai) 36%,var(--ai-2) 36%,var(--ai-2) 40%,transparent 40%,transparent),
+ radial-gradient(circle at 0 150%,var(--ai) 24%,var(--ai-2) 24%,var(--ai-2) 28%,var(--ai) 28%,var(--ai) 36%,var(--ai-2) 36%,var(--ai-2) 40%,transparent 40%,transparent),
+ radial-gradient(circle at 50% 100%,var(--ai-2) 10%,var(--ai) 10%,var(--ai) 23%,var(--ai-2) 23%,var(--ai-2) 30%,var(--ai) 30%,var(--ai) 43%,var(--ai-2) 43%,var(--ai-2) 50%,var(--ai) 50%,var(--ai) 63%,var(--ai-2) 63%,var(--ai-2) 71%,transparent 71%,transparent),
+ radial-gradient(circle at 100% 50%,var(--ai-2) 5%,var(--ai) 5%,var(--ai) 15%,var(--ai-2) 15%,var(--ai-2) 20%,var(--ai) 20%,var(--ai) 29%,var(--ai-2) 29%,var(--ai-2) 34%,var(--ai) 34%,var(--ai) 44%,var(--ai-2) 44%,var(--ai-2) 49%,transparent 49%,transparent),
+ radial-gradient(circle at 0 50%,var(--ai-2) 5%,var(--ai) 5%,var(--ai) 15%,var(--ai-2) 15%,var(--ai-2) 20%,var(--ai) 20%,var(--ai) 29%,var(--ai-2) 29%,var(--ai-2) 34%,var(--ai) 34%,var(--ai) 44%,var(--ai-2) 44%,var(--ai-2) 49%,transparent 49%,transparent);
+ background-size:64px 32px}
+header.top{margin-inline:-16px;padding:18px 16px 16px;color:var(--onink)}
+.toprow{max-width:720px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:12px}
+.brand{display:flex;align-items:center;gap:12px;min-width:0}
+.hanko{width:44px;height:44px;flex:none;border-radius:50%;background:var(--shu);color:var(--onink);display:grid;place-items:center;font-family:var(--display);font-weight:800;font-size:20px;box-shadow:0 0 0 3px var(--onink)}
+h1{font-size:23px;line-height:1.1;color:var(--onink)}
+.top .sub{color:var(--onink);opacity:.85}
+.me{border:1px solid rgba(255,255,255,.5);background:rgba(0,0,0,.18);color:var(--onink);border-radius:999px;padding:6px 12px;font-size:13px;white-space:nowrap}
+.sub{color:var(--muted);font-size:13px}
+.banner{background:var(--shu-soft);border-radius:8px;padding:10px 12px;font-size:13px;margin-top:12px}
+section.block{margin-top:22px}
+.h2row{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:10px}
+.h2{display:flex;align-items:baseline;gap:8px}
+.h2 .kj{font-family:var(--display);color:var(--shu);font-size:15px;font-weight:800}
+h2{font-size:19px}
+.btn{border:0;border-radius:6px;padding:9px 16px;font-weight:700;background:var(--shu);color:var(--onink);white-space:nowrap}
+.btn.ghost{background:var(--paper);color:var(--sumi);border:1px solid var(--line)}
+.btn.small{padding:6px 12px;font-size:13px}
+.linkbtn{color:var(--link);background:none;border:0;padding:0;font-size:14px;text-decoration:none;font-weight:700}
+.linkbtn.danger{color:var(--bad)}
+.card{background:var(--paper);border:1px solid var(--line);border-radius:8px;padding:14px}
+.empty{border:1.5px dashed var(--line);border-radius:8px;padding:18px;text-align:center;color:var(--muted);font-size:14px}
+.chip{display:inline-flex;align-items:center;gap:4px;border:1px solid var(--line);border-radius:4px;padding:1px 8px;font-size:12px;white-space:nowrap;color:var(--muted);background:var(--paper)}
+.chip.city{border-color:var(--c);color:var(--c);font-weight:700}
+.chip.ok{border-color:var(--good);color:var(--good)} .chip.todo{border-color:var(--meh);color:var(--meh)}
+.meta{display:flex;flex-wrap:wrap;gap:6px}
+.line{display:flex;justify-content:space-between;gap:10px;align-items:center;padding-block:10px;border-bottom:1px solid var(--line)}
+.line:last-child{border-bottom:0}
+.line>div{min-width:0}
+.line small{display:block;color:var(--muted);font-size:12px}
+.row{display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:space-between}
+.links{display:flex;flex-wrap:wrap;gap:14px;align-items:center}
+.links a{color:var(--link);text-decoration:none;font-weight:700;font-size:14px}
+.hero{margin-top:14px;display:grid;grid-template-columns:auto 1fr;gap:16px;align-items:center}
+.count{font-family:var(--display);font-weight:800;font-size:54px;line-height:1;color:var(--shu);font-variant-numeric:tabular-nums}
+.count small{display:block;font-family:var(--body);font-size:13px;font-weight:500;color:var(--muted);margin-top:6px}
+.route{display:flex;flex-wrap:wrap;gap:6px;align-items:center;font-size:13px}
+.route .st{border:1.5px solid var(--c);color:var(--c);border-radius:4px;padding:2px 8px;font-weight:700;background:var(--paper)}
+.route i{color:var(--muted);font-style:normal}
+.cta{display:flex;gap:12px;align-items:center;justify-content:space-between;background:var(--shu-soft);border-radius:8px;padding:12px 14px;margin-top:14px}
+.podium{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;align-items:end}
+.pod{background:var(--paper);border:1px solid var(--line);border-radius:8px;padding:10px 8px;text-align:center;display:flex;flex-direction:column;gap:4px;min-width:0}
+.pod .rk{font-family:var(--display);font-weight:800;font-size:22px;color:var(--shu)}
+.pod.r1{padding-block:18px;border-color:var(--shu)}
+.pod b{font-size:13px;overflow-wrap:anywhere}
+.progress{height:8px;border-radius:4px;background:var(--soft);overflow:hidden;margin-bottom:8px}
+.progress span{display:block;height:100%;background:var(--good)}
+.ck{display:flex;align-items:center;gap:10px;padding-block:9px;border-bottom:1px solid var(--line)}
+.ck:last-of-type{border-bottom:0}
+.box{width:26px;height:26px;flex:none;border-radius:6px;border:2px solid var(--line);background:var(--paper);color:var(--onink);font-weight:800;display:grid;place-items:center;padding:0}
+.ck.done .box{background:var(--good);border-color:var(--good)}
+.cktext{flex:1;min-width:0;text-align:left;background:none;border:0;padding:0;font-size:14px;overflow-wrap:anywhere}
+.cktext small{display:block;color:var(--muted);font-size:12px}
+.ck.done .cktext{text-decoration:line-through;color:var(--muted)}
+.cities{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;margin-top:14px}
+.cityb{border:1.5px solid var(--line);background:var(--paper);border-radius:8px;padding:8px 2px;text-align:center;display:flex;flex-direction:column;align-items:center}
+.cityb .kj{font-family:var(--display);font-size:22px;font-weight:800;color:var(--c);line-height:1.2}
+.cityb .nm{font-size:12px;font-weight:700}
+.cityb[aria-pressed="true"]{background:var(--c);border-color:var(--c)}
+.cityb[aria-pressed="true"] *{color:var(--onink)}
+.tabs2{display:flex;margin-top:12px;border-bottom:1px solid var(--line)}
+.tabs2 button{border:0;background:none;padding:8px 12px;font-weight:700;color:var(--muted);border-bottom:2.5px solid transparent;margin-bottom:-1px}
+.tabs2 button[aria-pressed="true"]{color:var(--shu);border-color:var(--shu)}
+.bar{display:flex;flex-wrap:wrap;gap:8px;align-items:center;justify-content:space-between;margin-block:12px}
+.pills{display:flex;gap:6px;flex-wrap:wrap}
+.pills button{border:1px solid var(--line);background:var(--paper);border-radius:999px;padding:4px 11px;font-size:13px;color:var(--muted)}
+.pills button[aria-pressed="true"]{background:var(--sumi);color:var(--washi);border-color:var(--sumi)}
+.list{display:flex;flex-direction:column;gap:10px}
+.act{display:grid;grid-template-columns:1fr auto;gap:8px 12px;align-items:start}
+.act.kept{border-color:var(--good)}
+.act .title{background:none;border:0;padding:0;text-align:left;min-width:0}
+.act h3{font-size:17px;line-height:1.3;overflow-wrap:anywhere}
+.act .meta{margin-top:6px}
+.stamp{width:48px;height:48px;border:2px solid var(--shu);color:var(--shu);border-radius:8px;display:grid;place-items:center;align-content:center;font-family:var(--display);font-weight:800;font-size:18px;transform:rotate(-6deg);font-variant-numeric:tabular-nums;line-height:1}
+.stamp small{display:block;font-size:10px}
+.stamp.zero{border-color:var(--line);color:var(--muted)}
+.vote{grid-column:1/-1;display:grid;grid-template-columns:repeat(3,1fr);gap:6px}
+.vote button{border:1.5px solid var(--line);background:var(--paper);border-radius:6px;padding:7px 4px;font-size:13px;font-weight:700;display:flex;align-items:center;justify-content:center;gap:6px}
+.vote button i{font-style:normal;font-family:var(--display);font-size:16px}
+.vote .up i{color:var(--good)} .vote .meh i{color:var(--meh)} .vote .down i{color:var(--bad)}
+.vote button[aria-pressed="true"].up{background:var(--good);border-color:var(--good);color:var(--onink)}
+.vote button[aria-pressed="true"].meh{background:var(--meh);border-color:var(--meh);color:var(--onink)}
+.vote button[aria-pressed="true"].down{background:var(--bad);border-color:var(--bad);color:var(--onink)}
+.vote button[aria-pressed="true"] i{color:var(--onink)}
+.others{grid-column:1/-1;font-size:12px;color:var(--muted);display:flex;gap:12px;flex-wrap:wrap}
+.others b.up{color:var(--good)} .others b.meh{color:var(--meh)} .others b.down{color:var(--bad)}
+.ai{display:flex;gap:10px;align-items:center;justify-content:space-between;border:1px dashed var(--shu);border-radius:8px;padding:10px 12px;margin-top:12px}
+.day{display:grid;grid-template-columns:54px 1fr;gap:12px}
+.dnum{text-align:center;border-right:1px solid var(--line);padding-right:10px}
+.dnum b{display:block;font-family:var(--display);font-size:30px;line-height:1;color:var(--c);font-variant-numeric:tabular-nums}
+.dnum span{display:block;font-family:var(--display);font-size:18px;color:var(--muted)}
+.dnum small{font-size:11px;color:var(--muted)}
+.dbody{min-width:0;display:flex;flex-direction:column;gap:6px}
+.dinfo{font-size:13px;display:flex;flex-direction:column;gap:2px}
+.slot{display:grid;grid-template-columns:78px 1fr;gap:8px;padding-top:6px;border-top:1px solid var(--line)}
+.slot>span{font-size:12px;color:var(--muted)}
+.slot ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:3px;min-width:0}
+.slot li{display:flex;justify-content:space-between;gap:8px;font-size:14px}
+.slot li span{min-width:0;overflow-wrap:anywhere}
+.slot li button.x{border:0;background:none;color:var(--muted);padding:0 4px}
+.addslot{font-size:12px;color:var(--muted);background:none;border:0;padding:0;text-align:left}
+.load{font-size:12px;color:var(--muted)} .load.over{color:var(--bad);font-weight:700}
+.mapwrap svg{width:100%;height:auto;display:block}
+table{width:100%;border-collapse:collapse;font-size:14px}
+th,td{text-align:right;padding:8px 6px;border-bottom:1px solid var(--line);font-variant-numeric:tabular-nums;white-space:nowrap}
+th:first-child,td:first-child{text-align:left}
+th{font-size:12px;color:var(--muted);font-weight:500}
+tfoot td{font-weight:800;border-bottom:0;font-size:16px}
+.tablewrap{overflow-x:auto}
+.flight{display:grid;grid-template-columns:1fr auto;gap:10px;align-items:end;background:var(--soft);border-radius:8px;padding:12px;margin-bottom:12px}
+.bal{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.bal div{background:var(--soft);border-radius:8px;padding:10px;text-align:center}
+.bal b{display:block;font-variant-numeric:tabular-nums}
+.pos{color:var(--good)} .neg{color:var(--bad)}
+.subnav{display:flex;gap:6px;overflow-x:auto;padding-top:14px}
+.subnav button{border:1px solid var(--line);background:var(--paper);border-radius:999px;padding:6px 12px;font-size:13px;white-space:nowrap}
+.subnav button[aria-pressed="true"]{background:var(--sumi);color:var(--washi);border-color:var(--sumi)}
+.mn{display:grid;grid-template-columns:28px 1fr;gap:10px;padding-block:9px;border-bottom:1px solid var(--line)}
+.mn:last-child{border-bottom:0}
+.mn small{display:block;color:var(--muted);font-size:13px}
+.mk{width:26px;height:26px;border-radius:50%;display:grid;place-items:center;font-family:var(--display);font-weight:800;font-size:16px;border:2px solid currentColor}
+.mk.no{color:var(--bad)} .mk.yes{color:var(--good)}
+.phr{display:grid;gap:2px;padding-block:10px;border-bottom:1px solid var(--line)}
+.phr:last-child{border-bottom:0}
+.phr .jp{font-family:var(--display);font-size:20px;font-weight:800}
+.phr .ro{color:var(--shu);font-size:13px}
+.album{display:grid;grid-template-columns:repeat(auto-fill,minmax(100px,1fr));gap:6px}
+.album img,.thumbs img{width:100%;aspect-ratio:1;object-fit:cover;border-radius:6px;cursor:pointer;display:block}
+.thumbs{display:grid;grid-template-columns:repeat(4,1fr);gap:6px}
+.bigimg{width:100%;border-radius:8px;max-height:60vh;object-fit:contain;background:var(--soft)}
+.info h3{font-size:16px;margin-bottom:4px}
+.info p,.info ul{margin:0;font-size:14px}
+.info ul{padding-left:18px}
+.copy{font-variant-numeric:tabular-nums;font-weight:700;user-select:all}
+.exp{display:grid;grid-template-columns:auto 1fr auto;gap:12px;align-items:center;padding-block:12px;border-bottom:1px solid var(--line)}
+.exp:last-child{border-bottom:0}
+.exp .ic{width:40px;height:40px;border-radius:8px;background:var(--soft);display:grid;place-items:center;font-family:var(--display);font-weight:800;color:var(--shu)}
+.exp small{display:block;color:var(--muted);font-size:12px}
+label{font-size:12px;color:var(--muted);display:flex;flex-direction:column;gap:4px}
+input,select,textarea{border:1px solid var(--line);background:var(--washi);border-radius:6px;padding:8px 10px;width:100%;min-width:0}
+textarea{min-height:80px;resize:vertical}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.grid3{display:grid;grid-template-columns:90px 1fr 1fr;gap:8px;align-items:end}
+.stack{display:flex;flex-direction:column;gap:10px}
+.checks{display:flex;flex-wrap:wrap;gap:14px}
+.checks label{flex-direction:row;align-items:center;gap:6px;font-size:14px;color:var(--sumi)}
+.checks input{width:auto}
+nav.tabs{position:fixed;left:0;right:0;bottom:0;background:var(--paper);border-top:1px solid var(--line);display:flex;justify-content:center;padding-bottom:env(safe-area-inset-bottom,0px);z-index:5}
+nav.tabs button{flex:1;max-width:140px;border:0;background:none;padding:7px 2px 9px;display:flex;flex-direction:column;align-items:center;font-size:11px;color:var(--muted)}
+nav.tabs button b{font-family:var(--display);font-size:21px;font-weight:800;line-height:1.2}
+nav.tabs button[aria-pressed="true"]{color:var(--shu)}
+.fab{position:fixed;right:max(16px,calc(50% - 344px));bottom:calc(76px + env(safe-area-inset-bottom,0px));width:56px;height:56px;border-radius:50%;border:0;background:var(--shu);color:var(--onink);font-size:30px;line-height:1;box-shadow:0 4px 14px rgba(0,0,0,.25);z-index:6}
+.sheet{position:fixed;inset:0;background:rgba(15,10,10,.5);display:flex;align-items:flex-end;justify-content:center;z-index:10}
+.sheet>div{background:var(--paper);width:100%;max-width:560px;border-radius:14px 14px 0 0;padding:18px 16px calc(18px + env(safe-area-inset-bottom,0px));max-height:92%;overflow:auto;display:flex;flex-direction:column;gap:12px}
+.sheet h2{font-size:21px}
+.foot{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap}
+.choice{display:grid;gap:8px}
+.choice button{text-align:left;border:1px solid var(--line);background:var(--washi);border-radius:8px;padding:12px;display:flex;flex-direction:column;gap:2px}
+.choice button:disabled{opacity:.5}
+.toast{position:fixed;left:50%;bottom:150px;transform:translateX(-50%);background:var(--sumi);color:var(--washi);padding:8px 14px;border-radius:999px;font-size:13px;z-index:20}
+.cm{font-size:14px;overflow-wrap:anywhere}
+.cm b{font-size:12px;color:var(--shu);margin-right:6px}
+.cmform{display:flex;gap:6px}
+@media (max-width:420px){.cityb .kj{font-size:19px}.grid2{grid-template-columns:1fr}.count{font-size:44px}.flight{grid-template-columns:1fr}}
+@media (prefers-reduced-motion:no-preference){.vote button{transition:background .15s,transform .1s}.vote button:active{transform:scale(.95)}}
+
+/* ---- modern pass ---- */
+:root{--shadow:0 1px 2px rgba(43,37,33,.05),0 10px 30px rgba(43,37,33,.07);--glass:rgba(255,251,243,.82)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--shadow:0 1px 2px rgba(0,0,0,.4),0 10px 30px rgba(0,0,0,.35);--glass:rgba(34,30,36,.82)}}
+:root[data-theme="dark"]{--shadow:0 1px 2px rgba(0,0,0,.4),0 10px 30px rgba(0,0,0,.35);--glass:rgba(34,30,36,.82)}
+body{padding-block:0 130px;-webkit-font-smoothing:antialiased}
+header.top{border-radius:0 0 26px 26px;padding:20px 16px 24px;box-shadow:var(--shadow)}
+h1{font-size:25px;letter-spacing:.01em}
+.hanko{width:46px;height:46px;font-size:21px}
+.card{border-radius:16px;border-color:transparent;box-shadow:var(--shadow)}
+.act.kept{box-shadow:var(--shadow),inset 0 0 0 1.5px var(--good)}
+.empty{border-radius:16px}
+.btn{border-radius:12px;transition:transform .1s,filter .15s}
+.btn:hover{filter:brightness(1.06)}
+.btn:active{transform:scale(.97)}
+.btn.ghost{border-color:var(--line)}
+.chip{border-radius:999px;border-color:transparent;background:var(--soft);padding:2px 10px}
+.chip.city,.chip.ok,.chip.todo{background:transparent;border-color:currentColor}
+.hero{position:relative;overflow:hidden;background:var(--paper);border-radius:22px;padding:22px 20px;box-shadow:var(--shadow);margin-top:18px}
+.hero::before{content:"";position:absolute;right:-50px;top:-50px;width:170px;height:170px;border-radius:50%;background:var(--shu);opacity:.13}
+.hero>*{position:relative}
+.count{font-size:60px;letter-spacing:-.02em}
+.route .st{border-radius:999px;border-width:1px}
+.cta{border-radius:16px;padding:14px 16px}
+.pod{border-radius:16px;border-color:transparent;box-shadow:var(--shadow)}
+.pod.r1{box-shadow:var(--shadow),inset 0 0 0 1.5px var(--shu)}
+.progress{height:10px;border-radius:999px}
+.progress span{border-radius:999px;background:linear-gradient(90deg,var(--hiroshima),var(--good))}
+.box{border-radius:8px}
+.cityb{border-radius:16px;border-color:transparent;box-shadow:var(--shadow);padding:10px 2px;transition:transform .15s}
+.cityb:active{transform:scale(.96)}
+.cityb[aria-pressed="true"]{box-shadow:0 8px 20px -6px var(--c)}
+.tabs2{background:var(--soft);border:0;border-radius:14px;padding:4px;gap:4px;margin-top:14px}
+.tabs2 button{flex:1;border:0;border-radius:10px;margin:0;padding:8px 10px;font-size:14px}
+.tabs2 button[aria-pressed="true"]{background:var(--paper);color:var(--shu);box-shadow:0 1px 3px rgba(0,0,0,.12)}
+.pills button{padding:5px 13px}
+.vote button{border-radius:12px;padding:9px 4px}
+.stamp{border-radius:12px}
+.ai{border-radius:16px;border-style:solid;border-color:transparent;background:var(--shu-soft)}
+.day{gap:14px}
+.dnum{border-right:0;background:var(--soft);border-radius:14px;padding:10px 4px;align-self:start}
+.slot{border-top-style:dashed}
+.flight{border-radius:16px}
+.bal div{border-radius:14px}
+.subnav{gap:8px;scrollbar-width:none}
+.subnav::-webkit-scrollbar{display:none}
+.subnav button{border-color:transparent;background:var(--paper);box-shadow:var(--shadow);padding:7px 14px}
+.choice button{border-radius:14px;border-color:transparent;background:var(--soft);transition:transform .1s}
+.choice button:active{transform:scale(.98)}
+input,select,textarea{border-radius:10px;padding:10px 12px}
+nav.tabs{left:12px;right:12px;bottom:calc(10px + env(safe-area-inset-bottom,0px));max-width:560px;margin:0 auto;border:0;border-radius:24px;padding:4px 6px;padding-bottom:4px;background:var(--glass);backdrop-filter:blur(16px) saturate(1.4);-webkit-backdrop-filter:blur(16px) saturate(1.4);box-shadow:var(--shadow)}
+nav.tabs button{padding:6px 2px;gap:1px;font-weight:500}
+nav.tabs button b{font-size:19px;padding:2px 16px;border-radius:12px;transition:background .2s}
+nav.tabs button[aria-pressed="true"] b{background:var(--shu-soft)}
+.fab{bottom:calc(88px + env(safe-area-inset-bottom,0px));border-radius:20px;background:linear-gradient(140deg,var(--shu),var(--osaka));box-shadow:0 10px 24px -6px var(--shu)}
+.sheet{background:rgba(15,10,10,.45);backdrop-filter:blur(3px);-webkit-backdrop-filter:blur(3px)}
+.sheet>div{border-radius:26px 26px 0 0;padding-top:12px}
+.sheet>div::before{content:"";align-self:center;width:40px;height:5px;border-radius:3px;background:var(--line);flex:none}
+.toast{bottom:160px;border-radius:14px;box-shadow:var(--shadow)}
+@media (prefers-reduced-motion:no-preference){
+ #view.anim>*{animation:rise .28s ease both}
+ .sheet>div{animation:up .25s cubic-bezier(.2,.8,.2,1)}
+ @keyframes rise{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+ @keyframes up{from{transform:translateY(40px);opacity:.6}to{transform:none;opacity:1}}
+}
+
+/* ---- hinomaru theme: blanc, rouge, vagues bleues ---- */
+:root{
+  --washi:#f6f7fa; --paper:#ffffff; --sumi:#1c2233; --muted:#6b7286; --line:#e3e6ee; --soft:#eef1f7;
+  --shu:#c8102e; --shu-soft:#fbe7ea; --ai:#1d3a82; --ai-2:#3456a6; --link:#1d3a82;
+  --osaka:#d9542b; --hiroshima:#2b8a6c; --kyoto:#7a4fb0; --tokyo:#1f5fc8;
+  --good:#2b8a6c; --meh:#c98a16; --bad:#c8102e; --onink:#ffffff;
+  --shadow:0 1px 2px rgba(29,58,130,.06),0 10px 28px rgba(29,58,130,.08);--glass:rgba(255,255,255,.85)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --washi:#0f1424; --paper:#171e33; --sumi:#eef1f8; --muted:#9aa3bd; --line:#28314d; --soft:#1f2844;
+  --shu:#ff4d63; --shu-soft:#3a1c27; --ai:#15295e; --ai-2:#24407f; --link:#9db4ff;
+  --osaka:#ff8a5c; --hiroshima:#5fcfa8; --kyoto:#b993ff; --tokyo:#7fa8ff;
+  --good:#5fcfa8; --meh:#f2c05a; --bad:#ff4d63; --onink:#ffffff;
+  --shadow:0 1px 2px rgba(0,0,0,.4),0 10px 28px rgba(0,0,0,.35);--glass:rgba(23,30,51,.85);color-scheme:dark}}
+:root[data-theme="dark"]{
+  --washi:#0f1424; --paper:#171e33; --sumi:#eef1f8; --muted:#9aa3bd; --line:#28314d; --soft:#1f2844;
+  --shu:#ff4d63; --shu-soft:#3a1c27; --ai:#15295e; --ai-2:#24407f; --link:#9db4ff;
+  --osaka:#ff8a5c; --hiroshima:#5fcfa8; --kyoto:#b993ff; --tokyo:#7fa8ff;
+  --good:#5fcfa8; --meh:#f2c05a; --bad:#ff4d63; --onink:#ffffff;
+  --shadow:0 1px 2px rgba(0,0,0,.4),0 10px 28px rgba(0,0,0,.35);--glass:rgba(23,30,51,.85);color-scheme:dark}
+body{background:var(--washi)}
+header.top{position:relative;overflow:hidden}
+header.top::after{content:"";position:absolute;right:-30px;top:-30px;width:150px;height:150px;border-radius:50%;background:var(--shu);opacity:.9;pointer-events:none}
+.toprow{position:relative;z-index:1}
+.hanko{background:var(--shu);border-radius:50%;box-shadow:0 0 0 3px var(--onink)}
+.card,.pod,.cityb,.hero,.flight,.cta,.ai{border-radius:20px}
+.btn,.vote button,.tabs2,.choice button,input,select,textarea{border-radius:14px}
+.stamp{border-radius:50%;transform:rotate(-8deg)}
+.hero::before{background:var(--shu);opacity:.12}
+.count{color:var(--shu)}
+.progress span{background:var(--shu)}
+.fab{border-radius:50%;background:var(--shu);box-shadow:0 10px 24px -6px var(--shu)}
+.btn{background:var(--shu)}
+nav.tabs{border-radius:26px}
+nav.tabs button b{border-radius:999px}
+.ai{background:var(--soft)}
+.subnav button,.pills button{border-radius:999px}
+.logo{width:66px;height:44px;flex:none;border-radius:8px;overflow:hidden;box-shadow:0 0 0 2.5px #fff,0 4px 12px rgba(0,0,0,.25);display:block}
+header.top::after{display:none}
+.tabs2 button{font-size:13px;padding:8px 4px;white-space:nowrap}
+</style>
+
+<header class="top seigaiha">
+  <div class="toprow">
+    <div class="brand"><svg class="logo" viewBox="0 0 60 40" role="img" aria-label="Logo Japon 2027"><rect width="60" height="40" fill="#fff"/><path d="M26,20L106.0,20.0L104.5,35.6ZM26,20L99.9,50.6L92.5,64.4ZM26,20L82.6,76.6L70.4,86.5ZM26,20L56.6,93.9L41.6,98.5ZM26,20L26.0,100.0L10.4,98.5ZM26,20L-4.6,93.9L-18.4,86.5ZM26,20L-30.6,76.6L-40.5,64.4ZM26,20L-47.9,50.6L-52.5,35.6ZM26,20L-54.0,20.0L-52.5,4.4ZM26,20L-47.9,-10.6L-40.5,-24.4ZM26,20L-30.6,-36.6L-18.4,-46.5ZM26,20L-4.6,-53.9L10.4,-58.5ZM26,20L26.0,-60.0L41.6,-58.5ZM26,20L56.6,-53.9L70.4,-46.5ZM26,20L82.6,-36.6L92.5,-24.4ZM26,20L99.9,-10.6L104.5,4.4Z" fill="#bc002d"/><circle cx="26" cy="20" r="10" fill="#bc002d"/></svg><div><h1>Japon 2027</h1><div class="sub">4 – 18 mars · Pierre, Loïc, Axelle</div></div></div>
+    <button class="me" data-a="pickme" type="button">Je suis <b id="meName">…</b></button>
+  </div>
+</header>
+<div class="wrap">
+  <div id="banner" class="banner" hidden></div>
+  <main id="view"></main>
+</div>
+<button type="button" class="fab" data-a="fab" aria-label="Ajouter">+</button>
+<nav class="tabs" aria-label="Sections">
+  <button type="button" data-tab="home" aria-pressed="true"><b>家</b>Accueil</button>
+  <button type="button" data-tab="acts" aria-pressed="false"><b>夢</b>Envies</button>
+  <button type="button" data-tab="plan" aria-pressed="false"><b>暦</b>Planning</button>
+  <button type="button" data-tab="budget" aria-pressed="false"><b>円</b>Budget</button>
+  <button type="button" data-tab="more" aria-pressed="false"><b>他</b>Plus</button>
+</nav>
+<div id="sheetRoot"></div>
+<input type="file" id="importInput" accept="application/json,.json" hidden>
+<div id="toast" class="toast" hidden></div>
+
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"></script>
+<script src="config.js"></script>
+<script>
+/* Pont entre l'app et Firebase : remplace les fonctions fournies par Claude */
+(function(){
+  var cfg=window.FIREBASE_CONFIG||{};
+  if(!cfg.apiKey||String(cfg.apiKey).indexOf("REMPLACER")===0){window.claude={use:async function(){return null}};return}
+  firebase.initializeApp(cfg);
+  var ready=firebase.auth().signInAnonymously().then(function(c){window.__uid=c.user.uid;return c.user}).catch(function(e){console.error(e);return null});
+  var fs=firebase.firestore();
+  var admins=window.ADMIN_UIDS||[];
+  window.claude={use:async function(n){
+    var u=await ready;if(!u)return null;
+    if(n==="db")return fs;
+    if(n==="user")return{isOwner:async function(){return admins.indexOf(u.uid)>=0},id:async function(){return u.uid}};
+    if(n==="downloads")return{save:async function(o){var b=new Blob([o.data]);var a=document.createElement("a");a.href=URL.createObjectURL(b);a.download=o.filename;document.body.appendChild(a);a.click();a.remove();setTimeout(function(){URL.revokeObjectURL(a.href)},2000)}};
+    return null;
+  }};
+})();
+</script>
+<script>
+(function(){
+const CITIES=[{id:"osaka",name:"Osaka",kj:"大阪"},{id:"hiroshima",name:"Hiroshima",kj:"広島"},{id:"kyoto",name:"Kyoto",kj:"京都"},{id:"tokyo",name:"Tokyo",kj:"東京"}];
+const CITY=Object.fromEntries(CITIES.map(c=>[c.id,c]));
+const PLACES=[["paris","Paris CDG"],["osaka","Osaka"],["hiroshima","Hiroshima"],["kyoto","Kyoto"],["tokyo","Tokyo"]];
+const PLACE=Object.fromEntries(PLACES);
+const TYPES=["Temple / sanctuaire","Quartier / balade","Musée","Nature / jardin","Marché / shopping","Expérience","Excursion à la journée","Vie nocturne","Autre"];
+const RESTO_TYPES=["Ramen","Sushi","Okonomiyaki","Izakaya","Yakitori","Wagyu / yakiniku","Tempura","Udon / soba","Kaiseki","Street food","Café / dessert","Autre"];
+const SHOP_TYPES=["Grand magasin","Électronique","Manga / anime / jeux","Mode / vintage","Artisanat / souvenirs","Couteaux / cuisine","Papeterie","Cosmétiques","Bazar (Don Quijote, Daiso…)","Autre"];
+const KINDS={act:{label:"À faire",types:"TYPES",one:"activité"},resto:{label:"Où manger",one:"restaurant"},shop:{label:"Boutiques",one:"boutique"}};
+const typesOf=k=>k==="resto"?RESTO_TYPES:k==="shop"?SHOP_TYPES:TYPES;
+const DURS=[[1,"1 h"],[2,"2 h"],[3,"3 h"],[4,"Demi-journée"],[8,"Journée"]];
+const MODES=["Avion","Shinkansen","Train","Bus","Ferry","Autre"];
+const SLOTS=[["matin","Matin"],["aprem","Après-midi"],["soir","Soir"]];
+const PEOPLE=["p1","p2","p3"];
+const CATS=["Documents","Transports","Hébergement","Activités","Santé","Argent","Téléphone","Bagages","Autre"];
+const WK=["日","月","火","水","木","金","土"], WKFR=["dim.","lun.","mar.","mer.","jeu.","ven.","sam."];
+const DAYS=[];for(let d=4;d<=18;d++)DAYS.push("2027-03-"+String(d).padStart(2,"0"));
+const DEFAULT_SETTINGS={names:{p1:"Pierre",p2:"Loïc",p3:"Axelle"},yenPerEur:160,flightEur:"",
+ stays:{osaka:{from:"2027-03-05",to:"2027-03-09"},hiroshima:{from:"2027-03-09",to:"2027-03-11"},kyoto:{from:"2027-03-11",to:"2027-03-15"},tokyo:{from:"2027-03-15",to:"2027-03-18"}}};
+const IDEAS={
+ osaka:[["Dōtonbori le soir","Quartier / balade",3,"Néons, canal et street food (takoyaki, okonomiyaki)"],["Château d'Osaka","Musée",3,"Donjon-musée et grand parc, pruniers en fleur en mars"],["Marché de Kuromon","Marché / shopping",2,"Fruits de mer et snacks, plutôt le matin"],["Shinsekai et tour Tsūtenkaku","Quartier / balade",2,"Ambiance rétro, kushikatsu"],["Excursion à Nara","Excursion à la journée",8,"Daims, Tōdai-ji et son grand Bouddha, 45 min en train"],["Universal Studios Japan","Expérience",8,"Journée complète, réserver à l'avance"],["Umeda Sky Building","Quartier / balade",2,"Observatoire au coucher du soleil"]],
+ hiroshima:[["Mémorial et musée de la Paix","Musée",4,"Compter une demi-journée"],["Miyajima (Itsukushima)","Excursion à la journée",8,"Torii flottant, vérifier les marées"],["Château d'Hiroshima","Musée",2,"Proche du parc de la Paix"],["Jardin Shukkei-en","Nature / jardin",2,"Jardin paysager en centre-ville"]],
+ kyoto:[["Fushimi Inari-taisha","Temple / sanctuaire",3,"Milliers de torii, y aller tôt le matin"],["Kinkaku-ji (Pavillon d'or)","Temple / sanctuaire",2,"Nord-ouest de la ville"],["Arashiyama","Nature / jardin",4,"Bambouseraie, Tenryū-ji, pont Togetsukyō"],["Gion et Hanamikōji","Quartier / balade",2,"Maisons de thé, au crépuscule"],["Kiyomizu-dera et Higashiyama","Temple / sanctuaire",3,"Ruelles Sannenzaka et Ninenzaka"],["Marché de Nishiki","Marché / shopping",2,"La « cuisine de Kyoto », ferme tôt le soir"],["Chemin de la philosophie","Nature / jardin",2,"Balade le long du canal jusqu'au Ginkaku-ji"],["Cérémonie du thé","Expérience",2,"Sur réservation"]],
+ tokyo:[["Asakusa et Sensō-ji","Temple / sanctuaire",3,"Le plus ancien temple de Tokyo, rue Nakamise"],["Carrefour de Shibuya et Shibuya Sky","Quartier / balade",3,"Réserver Shibuya Sky au coucher du soleil"],["Meiji-jingū et Harajuku","Temple / sanctuaire",3,"Forêt au cœur de la ville, puis Takeshita-dōri"],["teamLab Planets","Expérience",2,"Art numérique immersif, réserver"],["Marché extérieur de Tsukiji","Marché / shopping",2,"Sushis et snacks le matin"],["Shinjuku : Omoide Yokochō et Golden Gai","Vie nocturne",3,"Petits bars et yakitori"],["Akihabara","Marché / shopping",3,"Électronique, jeux vidéo, manga"],["Excursion à Nikkō ou Hakone","Excursion à la journée",8,"Temples en forêt ou vue sur le Fuji"],["Parc Ueno et ses musées","Musée",3,"Premiers cerisiers possibles fin mars"]]};
+const PHRASES=[["Bonjour","こんにちは","konnichiwa"],["Merci beaucoup","ありがとうございます","arigatō gozaimasu"],["Excusez-moi / pardon","すみません","sumimasen"],["Oui / non","はい / いいえ","hai / iie"],["S'il vous plaît","お願いします","onegai shimasu"],["Combien ça coûte ?","いくらですか","ikura desu ka"],["Où sont les toilettes ?","トイレはどこですか","toire wa doko desu ka"],["Je ne comprends pas","わかりません","wakarimasen"],["Parlez-vous anglais ?","英語を話せますか","eigo o hanasemasu ka"],["Nous sommes trois","三人です","san-nin desu"],["Bon appétit","いただきます","itadakimasu"],["C'était délicieux, merci","ごちそうさまでした","gochisōsama deshita"],["L'addition, s'il vous plaît","お会計お願いします","okaikei onegai shimasu"],["La carte bancaire est acceptée ?","カードは使えますか","kādo wa tsukaemasu ka"],["Où est la gare ?","駅はどこですか","eki wa doko desu ka"],["Un billet pour …, s'il vous plaît","…までの切符をください","… made no kippu o kudasai"],["Je suis allergique à …","…のアレルギーがあります","… no arerugī ga arimasu"],["Au secours !","助けて！","tasukete!"],["Appelez une ambulance","救急車を呼んでください","kyūkyūsha o yonde kudasai"],["Santé !","乾杯","kanpai"]];
+
+let db=null, live=false, sampleFn=null, assets=null, downloads=null, isAdmin=true;
+const canEdit=x=>isAdmin||(x&&me&&x.by===me);
+const adminOnly=()=>{if(isAdmin)return false;toast("Réservé à "+nm("p1")+", qui gère l'organisation");return true};
+const COLS=["activities","transports","hotels","comments","checklist","expenses","photos"];
+const S=Object.fromEntries(COLS.map(c=>[c,[]]));
+let settings=JSON.parse(JSON.stringify(DEFAULT_SETTINGS)), notes="";
+let me=null; try{me=localStorage.getItem("tabi-me")}catch(e){}
+let tab="home", city="osaka", kind="act", filter="all", planView="days", more="manners", openFiche=null, photoCtx=null, ckAll=false;
+try{city=localStorage.getItem("tabi-city")||"osaka";const t=localStorage.getItem("tabi-tab");if(["home","acts","plan","budget","more"].includes(t))tab=t}catch(e){}
+if(!CITY[city])city="osaka";
+
+const $=s=>document.querySelector(s);
+const esc=s=>String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const nm=p=>(settings.names&&settings.names[p])||p;
+const yen=n=>"¥"+Math.round(n||0).toLocaleString("fr-FR");
+const toEur=y=>(y||0)/(settings.yenPerEur||160);
+const eur=n=>Math.round(n||0).toLocaleString("fr-FR")+" €";
+function toast(t){const el=$("#toast");el.textContent=t;el.hidden=false;clearTimeout(toast.t);toast.t=setTimeout(()=>el.hidden=true,1800)}
+function dp(iso){const d=new Date(iso+"T12:00:00");return{d:d.getDate(),w:d.getDay()}}
+function fmt(iso){if(!iso)return"";const p=dp(iso);return WKFR[p.w]+" "+p.d+" mars"}
+function fmtShort(iso){if(!iso)return"";const d=new Date(iso+"T12:00:00");return d.getDate()+"/"+(d.getMonth()+1)}
+function today(){const d=new Date();return d.getFullYear()+"-"+String(d.getMonth()+1).padStart(2,"0")+"-"+String(d.getDate()).padStart(2,"0")}
+const VAL={up:2,meh:1,down:-2};
+const score=a=>PEOPLE.reduce((s,k)=>s+(VAL[(a.votes||{})[k]]||0),0);
+const nVotes=a=>PEOPLE.filter(k=>(a.votes||{})[k]).length;
+const kept=a=>{const v=a.votes||{};return PEOPLE.filter(k=>v[k]==="up").length>=2&&!PEOPLE.some(k=>v[k]==="down")};
+const unanimous=a=>PEOPLE.every(k=>(a.votes||{})[k]==="up");
+const hours=a=>Number(a.hours)||0;
+function durLabel(a){const d=DURS.find(x=>x[0]===Number(a.hours));return d?d[1]:(a.duration||"")}
+function cityOfDay(iso){const st=settings.stays||{};let main=null,from=null;
+ for(const c of CITIES){const s=st[c.id];if(s&&iso>=s.from&&iso<s.to)main=c.id}
+ if(!main)for(const c of CITIES){const s=st[c.id];if(s&&iso===s.to)main=c.id}
+ for(const c of CITIES){const s=st[c.id];if(s&&s.to===iso&&c.id!==main)from=c.id}
+ return{main,from}}
+const hotelOn=iso=>S.hotels.find(h=>h.checkin&&h.checkout&&iso>=h.checkin&&iso<h.checkout);
+const newId=p=>p+Date.now().toString(36)+Math.random().toString(36).slice(2,6);
+
+/* ---------- data ---------- */
+function fail(e){const c=e&&(e.code==="permission-denied"?"invalid_argument":e.code);toast(c==="invalid_argument"?"Tu n'as pas les droits pour modifier":c==="quota_exceeded"?"Espace plein : supprime des éléments":"Échec de l'enregistrement, réessaie")}
+async function save(col,id,data){if(live){try{await db.collection(col).doc(id).set(data)}catch(e){fail(e)}}else{const arr=S[col];const i=arr.findIndex(a=>a.id===id);const r={id,...data};if(i>=0)arr[i]=r;else arr.push(r);refresh()}}
+async function patch(col,id,data){if(live){try{await db.collection(col).doc(id).update(data)}catch(e){fail(e)}}else{const a=S[col].find(x=>x.id===id);if(a)for(const k in data){const v=data[k];if(v&&typeof v==="object"&&!Array.isArray(v))a[k]={...(a[k]||{}),...v};else a[k]=v}refresh()}}
+async function remove(col,id){if(live){try{await db.collection(col).doc(id).delete()}catch(e){fail(e)}}else{S[col]=S[col].filter(a=>a.id!==id);refresh()}}
+async function saveDoc(path,data){if(live){try{await db.doc(path).set(data)}catch(e){fail(e)}}}
+
+/* ---------- shared bits ---------- */
+const head=(kj,t,right="")=>`<div class="h2row"><div class="h2"><span class="kj">${kj}</span><h2>${t}</h2></div>${right}</div>`;
+const opts=(arr,cur)=>arr.map(([v,l])=>`<option value="${esc(v)}"${String(v)===String(cur??"")?" selected":""}>${esc(l)}</option>`).join("");
+function routeHtml(){const st=settings.stays||{};return `<div class="route"><span>Paris</span><i>→</i>${CITIES.map(c=>`<span class="st" style="--c:var(--${c.id})">${c.name} ${st[c.id]?dp(st[c.id].from).d+"–"+dp(st[c.id].to).d:""}</span>`).join("<i>→</i>")}<i>→</i><span>Paris</span></div>`}
+function todoItems(){const out=[];
+  S.activities.filter(a=>a.booking==="todo").forEach(a=>out.push({k:"act",id:a.id,t:a.title,sub:CITY[a.city].name+(a.bookBy?" · avant le "+fmtShort(a.bookBy):"")}));
+  S.transports.filter(t=>!t.booked).forEach(t=>out.push({k:"tr",id:t.id,t:(PLACE[t.from]||t.from)+" → "+(PLACE[t.to]||t.to),sub:(t.mode||"Trajet")+" · "+fmt(t.date)}));
+  S.hotels.filter(h=>!h.booked).forEach(h=>out.push({k:"ho",id:h.id,t:h.name||"Hôtel",sub:CITY[h.city]?CITY[h.city].name:""}));
+  return out}
+
+/* ---------- views ---------- */
+function render(){
+  $("#meName").textContent=me?nm(me):"choisir";
+  document.querySelectorAll("nav.tabs button").forEach(b=>b.setAttribute("aria-pressed",String(b.dataset.tab===tab)));
+  $("#view").innerHTML=({home:vHome,acts:vActs,plan:vPlan,budget:vBudget,more:vMore}[tab]||vHome)();
+}
+function refresh(){
+  const ae=document.activeElement;
+  if(!(ae&&$("#view").contains(ae)&&/INPUT|TEXTAREA|SELECT/.test(ae.tagName)))render();
+  if(openFiche&&$("#sheetRoot .sheet")&&!(ae&&$("#sheetRoot").contains(ae)&&/INPUT|TEXTAREA|SELECT/.test(ae.tagName))){const a=S.activities.find(x=>x.id===openFiche);if(a)fiche(a,true);else closeSheet()}
+}
+function vHome(){
+  const t=today(),start="2027-03-04";const days=Math.round((new Date(start+"T12:00:00")-new Date(t+"T12:00:00"))/864e5);
+  const inTrip=t>=start&&t<="2027-03-18";
+  const myTodo=me?S.activities.filter(a=>!(a.votes||{})[me]).length:0;
+  const top=[...S.activities].filter(nVotes).sort((a,b)=>score(b)-score(a)).slice(0,3);const order=top.length===3?[top[1],top[0],top[2]]:top;
+  const ck=S.checklist;const done=ck.filter(i=>i.done).length;
+  const ckList=[...ck].sort((a,b)=>(a.done?1:0)-(b.done?1:0)||CATS.indexOf(a.cat)-CATS.indexOf(b.cat)||(a.createdAt||0)-(b.createdAt||0));
+  const shown=ckAll?ckList:ckList.filter(i=>!i.done).slice(0,5);
+  const todo=todoItems();
+  return `${live&&!isAdmin?`<div class="banner">${esc(nm("p1"))} gère l'organisation (trajets, hôtels, checklist, réglages). Toi, tu proposes, votes, discutes et notes les dépenses.</div>`:""}<div class="hero"><div class="count">${inTrip?"J"+(dp(t).d-3):"J-"+Math.max(days,0)}<small>${inTrip?"sur 15 jours":"avant le départ"}</small></div><div>${routeHtml()}</div></div>
+  ${me&&myTodo?`<div class="cta"><div><b>${myTodo} envie${myTodo>1?"s":""} à voter</b><div class="sub">Ton avis fait avancer le planning.</div></div><button type="button" class="btn small" data-a="govote">Voter</button></div>`:""}
+  ${inTrip?`<section class="block">${head("今","Aujourd'hui")}${dayCard(t)}</section>`:""}
+  <section class="block">${head("準","Avant le départ",`<span class="sub">${done}/${ck.length}</span>`)}
+   <div class="progress" aria-hidden="true"><span style="width:${ck.length?Math.round(done/ck.length*100):0}%"></span></div>
+   <div class="card">${shown.length?shown.map(i=>`<div class="ck${i.done?" done":""}" data-id="${i.id}"><button type="button" class="box" data-a="tick" role="checkbox" aria-checked="${!!i.done}" aria-label="${esc(i.text)}"${isAdmin?"":" disabled"}>${i.done?"✓":""}</button><button type="button" class="cktext" data-a="editck">${esc(i.text)}<small>${esc(i.cat||"")}${i.who&&i.who!=="all"?" · "+esc(nm(i.who)):""}${i.due?" · "+fmtShort(i.due):""}</small></button></div>`).join(""):`<div class="sub">Tout est prêt.</div>`}
+   <div class="row" style="margin-top:8px"><button type="button" class="linkbtn" data-a="ckall">${ckAll?"Voir seulement le reste à faire":"Voir toute la liste ("+ck.length+")"}</button></div></div></section>
+  <section class="block">${head("位","Le podium",`<span class="sub">les plus votées</span>`)}
+   ${top.length?`<div class="podium">${order.map(a=>{const r=top.indexOf(a)+1;return `<div class="pod r${r}"><span class="rk">${["一","二","三"][r-1]}</span><b>${esc(a.title)}</b><span class="chip city" style="--c:var(--${a.city});align-self:center">${CITY[a.city].name}</span></div>`}).join("")}</div>`:`<div class="empty">Votez dans l'onglet Envies : vos favoris apparaîtront ici.</div>`}</section>
+  <section class="block">${head("予","À réserver",`<span class="sub">${todo.length}</span>`)}
+   ${todo.length?`<div class="card">${todo.slice(0,8).map(i=>`<div class="line"><div><b>${esc(i.t)}</b><small>${esc(i.sub)}</small></div>${isAdmin?`<button type="button" class="btn ghost small" data-a="booked" data-k="${i.k}" data-id="${i.id}">C'est réservé</button>`:""}</div>`).join("")}</div>`:`<div class="empty">Rien en attente.</div>`}</section>`;
+}
+function vActs(){
+  let list=S.activities.filter(a=>a.city===city&&(a.kind||"act")===kind);
+  if(filter==="tovote")list=list.filter(a=>me&&!(a.votes||{})[me]);
+  if(filter==="kept")list=list.filter(kept);
+  list.sort((a,b)=>score(b)-score(a)||(b.createdAt||0)-(a.createdAt||0));
+  const c=CITY[city];
+  const titles=new Set(S.activities.filter(a=>a.city===city).map(a=>a.title.toLowerCase()));
+  const ideas=kind==="act"&&S.activities.filter(a=>a.city===city&&(a.kind||"act")==="act").length<5?(IDEAS[city]||[]).map((i,k)=>[i,k]).filter(([i])=>!titles.has(i[0].toLowerCase())):[];
+  const n=k=>S.activities.filter(a=>a.city===city&&(a.kind||"act")===k).length;
+  return `<div class="cities">${CITIES.map(x=>`<button type="button" class="cityb" style="--c:var(--${x.id})" data-a="city" data-id="${x.id}" aria-pressed="${x.id===city}"><span class="kj">${x.kj}</span><span class="nm">${x.name}</span></button>`).join("")}</div>
+  <div class="tabs2" role="group" aria-label="Catégorie">${["act","resto","shop"].map(k=>`<button type="button" data-a="kind" data-id="${k}" aria-pressed="${kind===k}">${KINDS[k].label} (${n(k)})</button>`).join("")}</div>
+  <div class="bar"><div class="pills" role="group" aria-label="Filtre">${[["all","Tout"],["tovote","À voter"],["kept","Retenues"]].map(([k,l])=>`<button type="button" data-a="filter" data-id="${k}" aria-pressed="${filter===k}">${l}</button>`).join("")}</div></div>
+  <div class="list">${list.length?list.map(actCard).join(""):`<div class="empty">${filter==="tovote"?"Tu as voté pour tout ici.":filter==="kept"?"Rien de retenu pour l'instant : il faut deux « J'adore » et aucun « Bof ».":"Rien encore à "+c.name+". Touche le bouton + pour ajouter, ou demande des idées ci-dessous."}</div>`}</div>
+  ${sampleFn?`<div class="ai"><div><b>Idées de Claude</b><div class="sub">${kind==="resto"?"Des adresses où manger":kind==="shop"?"Des boutiques":"Des activités"} à ${c.name} selon vos votes</div></div><button type="button" class="btn small" data-a="suggest">Proposer</button></div>`:""}
+  ${ideas.length?`<section class="block">${head("案","Classiques à "+c.name)}<div class="card">${ideas.map(([i,k])=>`<div class="line"><div><b>${esc(i[0])}</b><small>${esc(i[3])}</small></div><button type="button" class="btn ghost small" data-a="idea" data-id="${k}">Ajouter</button></div>`).join("")}</div></section>`:""}`;
+}
+function actCard(a){
+  const v=a.votes||{};const mine=me?v[me]||"":"";const sc=score(a);
+  const vl={up:"♥",meh:"~",down:"×"};
+  const others=PEOPLE.filter(p=>p!==me);
+  const ncm=S.comments.filter(c=>c.act===a.id).length;
+  return `<article class="card act${kept(a)?" kept":""}" data-id="${a.id}">
+   <button type="button" class="title" data-a="open"><h3>${esc(a.title)}</h3>
+    <div class="meta">${unanimous(a)?'<span class="chip ok">Unanime</span>':kept(a)?'<span class="chip ok">Retenue</span>':""}${a.type?`<span class="chip">${esc(a.type)}</span>`:""}${durLabel(a)?`<span class="chip">${esc(durLabel(a))}</span>`:""}${a.priceYen?`<span class="chip">${yen(a.priceYen)}</span>`:""}${a.day?`<span class="chip ok">${fmtShort(a.day)}</span>`:""}${a.booking==="todo"?'<span class="chip todo">À réserver</span>':""}${ncm?`<span class="chip">${ncm} message${ncm>1?"s":""}</span>`:""}</div></button>
+   <div class="stamp${sc===0?" zero":""}" title="Score">${sc>0?"+":""}${sc}<small>点</small></div>
+   <div class="vote" role="group" aria-label="Mon vote">
+    <button type="button" class="up" data-a="vote" data-v="up" aria-pressed="${mine==="up"}"><i>♥</i>J'adore</button>
+    <button type="button" class="meh" data-a="vote" data-v="meh" aria-pressed="${mine==="meh"}"><i>~</i>Pourquoi pas</button>
+    <button type="button" class="down" data-a="vote" data-v="down" aria-pressed="${mine==="down"}"><i>×</i>Bof</button></div>
+   ${me?`<div class="others">${others.map(p=>`<span>${esc(nm(p))} <b class="${v[p]||""}">${v[p]?vl[v[p]]:"·"}</b></span>`).join("")}</div>`:""}
+  </article>`;
+}
+function dayCard(iso){
+  const p=dp(iso);const cd=cityOfDay(iso);const c=cd.main?CITY[cd.main]:null;
+  let lbl=c?(cd.from?CITY[cd.from].name+" → "+c.name:c.name):"Vol Paris CDG → Japon";
+  if(iso==="2027-03-18")lbl+=" · vol retour";
+  const planned=S.activities.filter(a=>a.day===iso);
+  const trs=S.transports.filter(t=>t.date===iso).sort((a,b)=>(a.time||"").localeCompare(b.time||""));
+  const ho=hotelOn(iso);
+  const h=planned.reduce((s,a)=>s+hours(a),0)+Math.max(planned.length-1,0)*0.5+trs.length*2;
+  return `<div class="card day" style="--c:var(--${c?c.id:"shu"})"><div class="dnum"><b>${p.d}</b><span>${WK[p.w]}</span><small>${WKFR[p.w]}</small></div>
+  <div class="dbody"><span class="chip city" style="align-self:flex-start">${esc(lbl)}</span>
+   ${trs.length||ho?`<div class="dinfo">${trs.map(t=>`<span>${t.mode==="Avion"?"✈":"🚄"} ${esc(PLACE[t.from]||t.from)} → ${esc(PLACE[t.to]||t.to)}${t.time?" · "+esc(t.time):""}</span>`).join("")}${ho?`<span>⌂ ${esc(ho.name)}</span>`:""}</div>`:""}
+   ${SLOTS.map(([k,l])=>{const it=planned.filter(a=>(a.slot||"matin")===k);return `<div class="slot"><span>${l}</span><ul>${it.map(a=>`<li><span>${esc(a.title)}${a.kind==="resto"?' <small class="sub">resto</small>':a.kind==="shop"?' <small class="sub">boutique</small>':""}</span><button type="button" class="x" data-a="unplan" data-id="${a.id}" aria-label="Retirer ${esc(a.title)}">×</button></li>`).join("")}<li><button type="button" class="addslot" data-a="pick" data-id="${iso}|${k}">+ ajouter</button></li></ul></div>`}).join("")}
+   ${planned.length?`<div class="load${h>9?" over":""}">${h>9?"Journée chargée · ":""}≈ ${Math.round(h)} h avec les déplacements</div>`:""}</div></div>`;
+}
+function vPlan(){
+  const sw=`<div class="tabs2" role="group" aria-label="Vue"><button type="button" data-a="planview" data-id="days" aria-pressed="${planView==="days"}">Jour par jour</button><button type="button" data-a="planview" data-id="logi" aria-pressed="${planView==="logi"}">Trajets et hôtels</button></div>`;
+  if(planView==="days"){const toPlace=S.activities.filter(a=>!a.day&&kept(a)).length;
+    return sw+`<div class="bar"><span class="sub">${toPlace?toPlace+" envie"+(toPlace>1?"s":"")+" retenue"+(toPlace>1?"s":"")+" à placer":"Touche « + ajouter » dans un créneau"}</span></div><div class="list">${DAYS.map(dayCard).join("")}</div>`}
+  const tr=[...S.transports].sort((a,b)=>(a.date||"").localeCompare(b.date||"")||(a.time||"").localeCompare(b.time||""));
+  const ho=[...S.hotels].sort((a,b)=>(a.checkin||"").localeCompare(b.checkin||""));
+  return sw+mapHtml()+`<section class="block">${head("線","Trajets",isAdmin?`<button type="button" class="btn small" data-a="addtr">+ Trajet</button>`:"")}
+   ${tr.length?`<div class="card">${tr.map(t=>`<div class="line" data-id="${t.id}"><div><b>${esc(PLACE[t.from]||t.from)} → ${esc(PLACE[t.to]||t.to)}</b><small>${esc(t.mode||"")} · ${fmt(t.date)}${t.time?" · "+esc(t.time):""}${t.ref?" · réf. "+esc(t.ref):""}</small></div><div class="links"><span class="chip ${t.booked?"ok":"todo"}">${t.booked?"Réservé":"À réserver"}</span>${isAdmin?`<button type="button" class="linkbtn" data-a="edittr">Modifier</button>`:""}</div></div>`).join("")}</div>`:`<div class="empty">Aucun trajet.</div>`}</section>
+  <section class="block">${head("宿","Hôtels",isAdmin?`<button type="button" class="btn small" data-a="addho">+ Hôtel</button>`:"")}
+   ${ho.length?`<div class="card">${ho.map(h=>`<div class="line" data-id="${h.id}"><div><b>${esc(h.name)}</b><small>${CITY[h.city]?CITY[h.city].name:""} · ${fmtShort(h.checkin)} → ${fmtShort(h.checkout)}${h.address?" · "+esc(h.address):""}</small></div><div class="links"><span class="chip ${h.booked?"ok":"todo"}">${h.booked?"Réservé":"À réserver"}</span>${isAdmin?`<button type="button" class="linkbtn" data-a="editho">Modifier</button>`:""}</div></div>`).join("")}</div>`:`<div class="empty">Aucun hôtel. Ajoute-les avec leurs dates, ils apparaîtront chaque jour dans le planning.</div>`}</section>`;
+}
+function mapHtml(){
+  const P={hiroshima:[132.46,34.39],osaka:[135.50,34.69],kyoto:[135.77,35.01],tokyo:[139.69,35.69]};
+  const X=lon=>20+(lon-131.8)/8.4*310,Y=lat=>20+(36.4-lat)/2.4*150,pt=id=>[X(P[id][0]),Y(P[id][1])];
+  const st=settings.stays||{};
+  const seg=(a,b,bend,lab)=>{const [x1,y1]=pt(a),[x2,y2]=pt(b);const mx=(x1+x2)/2,my=(y1+y2)/2+bend;const lx=(x1+2*mx+x2)/4,ly=(y1+2*my+y2)/4;
+    return `<path d="M${x1},${y1} Q${mx},${my} ${x2},${y2}" fill="none" stroke="var(--muted)" stroke-width="1.5" stroke-dasharray="5 4"/><text x="${lx}" y="${ly+(bend>0?14:-6)}" text-anchor="middle" font-size="10" fill="var(--muted)">${lab}</text>`};
+  const lbl={osaka:22,hiroshima:-14,kyoto:-14,tokyo:-14};
+  const dots=CITIES.map(c=>{const [x,y]=pt(c.id);const s=st[c.id];const dy=lbl[c.id];
+    return `<circle cx="${x}" cy="${y}" r="7" fill="var(--${c.id})"/><text x="${x}" y="${y+dy}" text-anchor="middle" font-size="12" font-weight="700" fill="var(--sumi)">${c.kj} ${c.name}</text>${s?`<text x="${x}" y="${y+dy+(dy>0?13:-13)}" text-anchor="middle" font-size="10" fill="var(--muted)">${dp(s.from).d}–${dp(s.to).d} mars</text>`:""}`}).join("");
+  return `<section class="block">${head("図","L'itinéraire",`<span class="sub">Shinkansen, temps indicatifs</span>`)}<div class="card mapwrap"><svg viewBox="0 0 350 200" role="img" aria-label="Itinéraire Osaka, Hiroshima, Kyoto, Tokyo">${seg("osaka","hiroshima",28,"≈ 1 h 30")}${seg("hiroshima","kyoto",-34,"≈ 1 h 45")}${seg("kyoto","tokyo",-10,"≈ 2 h 15")}${dots}</svg></div></section>`;
+}
+function vBudget(){
+  const by={};CITIES.forEach(c=>by[c.id]={act:0,hotel:0,tr:0});
+  S.activities.filter(a=>a.day).forEach(a=>{if(by[a.city])by[a.city].act+=Number(a.priceYen)||0});
+  S.hotels.forEach(h=>{if(by[h.city])by[h.city].hotel+=(Number(h.priceYen)||0)/3});
+  S.transports.forEach(t=>{if(t.from==="paris"||t.to==="paris")return;const d=CITY[t.to]?t.to:null;if(d)by[d].tr+=Number(t.priceYen)||0});
+  const flight=Number(settings.flightEur)||0;
+  const cityEur=id=>toEur(by[id].act+by[id].hotel+by[id].tr);
+  const total=flight+CITIES.reduce((s,c)=>s+cityEur(c.id),0);
+  const ex=[...S.expenses].sort((a,b)=>(b.date||"").localeCompare(a.date||"")||(b.at||0)-(a.at||0));
+  const spent=ex.reduce((s,e)=>s+(Number(e.amountYen)||0),0);
+  const bal={p1:0,p2:0,p3:0};ex.forEach(e=>{const amt=Number(e.amountYen)||0;const sp=e.split&&e.split.length?e.split:PEOPLE;bal[e.paidBy]=(bal[e.paidBy]||0)+amt;sp.forEach(p=>bal[p]-=amt/sp.length)});
+  const pos=PEOPLE.filter(p=>bal[p]>0.5).map(p=>[p,bal[p]]),neg=PEOPLE.filter(p=>bal[p]<-0.5).map(p=>[p,bal[p]]),tr=[];
+  while(pos.length&&neg.length){const a=neg[0],b=pos[0];const m=Math.min(-a[1],b[1]);tr.push([a[0],b[0],m]);a[1]+=m;b[1]-=m;if(a[1]>-0.5)neg.shift();if(b[1]<0.5)pos.shift()}
+  return `<section class="block">${head("算","Budget prévu",`<span class="sub">par personne</span>`)}
+   ${isAdmin?`<div class="flight"><label for="flightEur">✈ Billets d'avion Paris ⇄ Japon, aller-retour par personne (€)<input id="flightEur" type="number" min="0" step="1" inputmode="numeric" value="${esc(settings.flightEur)}" placeholder="Ex. 950"></label><button type="button" class="btn" data-a="saveflight">Enregistrer</button></div>`:""}
+   <div class="card"><div class="tablewrap"><table><thead><tr><th></th><th>Activités</th><th>Hôtel</th><th>Trains</th><th>Total</th></tr></thead><tbody>
+   <tr><td><b>✈ Vols</b></td><td></td><td></td><td></td><td>${flight?eur(flight):"—"}</td></tr>
+   ${CITIES.map(c=>{const b=by[c.id];return `<tr><td><b style="color:var(--${c.id})">${c.name}</b></td><td>${yen(b.act)}</td><td>${yen(b.hotel)}</td><td>${yen(b.tr)}</td><td>${eur(cityEur(c.id))}</td></tr>`}).join("")}
+   </tbody><tfoot><tr><td>Total</td><td colspan="3"></td><td>${eur(total)}</td></tr></tfoot></table></div>
+   <p class="sub" style="margin:10px 0 0">Activités comptées : celles placées dans le planning. Hôtels divisés par trois. Taux : 1 € = ${settings.yenPerEur} ¥ (modifiable dans Plus › Réglages).</p></div></section>
+  <section class="block">${head("払","Dépenses sur place",`<button type="button" class="btn small" data-a="addexp">+ Dépense</button>`)}
+   <div class="card stack"><div class="row"><span class="sub">Total dépensé</span><b>${yen(spent)} · ${eur(toEur(spent))}</b></div>
+   <div class="bal">${PEOPLE.map(p=>`<div><span class="sub">${esc(nm(p))}</span><b class="${bal[p]>=0?"pos":"neg"}">${bal[p]>=0?"+":"−"}${yen(Math.abs(bal[p]))}</b></div>`).join("")}</div>
+   ${tr.length?tr.map(([a,b,m])=>`<div class="line"><div><b>${esc(nm(a))} doit ${yen(m)} à ${esc(nm(b))}</b><small>≈ ${eur(toEur(m))}</small></div></div>`).join(""):`<div class="sub">${ex.length?"Tout le monde est à l'équilibre.":"Sur place, note chaque dépense commune : l'app calcule qui doit combien à qui."}</div>`}</div>
+   ${ex.length?`<div class="card" style="margin-top:10px">${ex.map(e=>`<div class="exp" data-id="${e.id}"><span class="ic">${esc((nm(e.paidBy)||"?").slice(0,1))}</span><div style="min-width:0"><b>${esc(e.label)}</b><small>${fmt(e.date)} · payé par ${esc(nm(e.paidBy))}${e.split&&e.split.length&&e.split.length<3?" · pour "+e.split.map(nm).map(esc).join(", "):""}</small></div><button type="button" class="linkbtn" data-a="editexp">${yen(e.amountYen)}</button></div>`).join("")}</div>`:""}</section>`;
+}
+function vMore(){
+  const items=[["manners","Savoir-vivre"],["lex","Lexique"],["pratique","Infos pratiques"],["notes","Notes"],["export","Export"],["reglages","Réglages"]];
+  const sub=`<div class="subnav" role="group" aria-label="Rubriques">${items.map(([k,l])=>`<button type="button" data-a="more" data-id="${k}" aria-pressed="${more===k}">${l}</button>`).join("")}</div>`;
+  return sub+({manners:mManners,lex:mLex,pratique:mInfo,notes:mNotes,export:mExport,reglages:mSettings}[more]||mLex)();
+}
+const MANNERS=[
+ ["道","Dans la rue",[["no","Manger ou boire en marchant","On mange devant le stand ou le konbini où l'on a acheté."],["no","Chercher une poubelle publique","Il y en a très peu : garder ses déchets et les trier au konbini ou à l'hôtel."],["no","Fumer n'importe où","Uniquement dans les zones fumeurs, même dans la rue dans beaucoup de villes."],["yes","Escalators","Se tenir à gauche à Tokyo, à droite à Osaka et à Kyoto."]]],
+ ["電","Dans les transports",[["no","Téléphoner ou parler fort","Téléphone en silencieux, conversations à voix basse."],["no","Monter avant que les gens descendent","Faire la queue sur les marques au sol, en file."],["no","S'asseoir sur les sièges prioritaires","Ils sont réservés aux personnes âgées, enceintes ou handicapées."],["yes","Gros bagages dans le Shinkansen","Réserver les places prévues pour les grandes valises."]]],
+ ["食","À table",[["no","Planter ses baguettes dans le riz","C'est un geste des rites funéraires, comme passer un aliment de baguettes à baguettes."],["no","Laisser un pourboire","Ce n'est pas l'usage et cela peut gêner."],["no","Se servir à boire en premier","On sert les autres, et ils vous servent en retour."],["yes","Aspirer ses nouilles bruyamment","C'est accepté, et même un compliment pour le cuisinier."],["yes","Dire « itadakimasu » et « gochisōsama »","Avant et après le repas."]]],
+ ["寺","Temples et sanctuaires",[["no","Marcher au centre sous un torii","Le milieu est le passage des dieux : on passe sur le côté."],["no","Photographier ou suivre les geiko à Gion","Certaines ruelles privées sont interdites et passibles d'amende."],["no","Garder ses chaussures à l'intérieur","Les retirer dès qu'un panneau ou une marche le demande."],["yes","Se purifier au temizuya","Rincer la main gauche, la droite, puis la bouche avec la main, jamais avec la louche."]]],
+ ["湯","Onsen, ryokan et maisons",[["no","Entrer dans le bain sans s'être lavé","On se lave entièrement assis aux douches, puis on entre nu, sans serviette dans l'eau."],["no","Montrer ses tatouages au onsen","Souvent refusés : vérifier avant, ou couvrir un petit tatouage."],["no","Marcher sur les tatamis en chaussons","Chaussures à l'entrée, chaussons dans le couloir, pieds nus ou chaussettes sur le tatami."],["no","Sortir des toilettes avec leurs chaussons","Ils restent aux toilettes."],["yes","Yukata : pan gauche par-dessus le droit","L'inverse est réservé aux défunts."]]],
+ ["礼","Échanges et politesse",[["no","Tendre l'argent de la main à la main","On le pose sur le petit plateau près de la caisse."],["no","Se moucher bruyamment en public","On s'isole. Porter un masque si l'on est enrhumé."],["no","Montrer du doigt","On indique avec la main ouverte."],["yes","Donner et recevoir à deux mains","Cartes de visite, cadeaux, monnaie rendue."],["yes","Un « sumimasen » ouvre toutes les portes","Pour s'excuser, appeler un serveur ou demander de l'aide."]]]];
+function mManners(){return `<section class="block">${head("礼","Savoir-vivre au Japon")}<div class="stack">${MANNERS.map(([kj,t,list])=>`<div class="card"><div class="h2" style="margin-bottom:6px"><span class="kj">${kj}</span><h3 style="font-size:17px">${t}</h3></div>${list.map(([k,a,b])=>`<div class="mn"><span class="mk ${k}">${k==="no"?"×":"○"}</span><div><b>${k==="no"?"À éviter : ":""}${a}</b><small>${b}</small></div></div>`).join("")}</div>`).join("")}</div></section>`}
+function mLex(){return `<section class="block">${head("語","Lexique de survie")}<div class="card">${PHRASES.map(([fr,jp,ro])=>`<div class="phr"><span class="jp">${jp}</span><span class="ro">${ro}</span><span>${fr}</span></div>`).join("")}</div></section>`}
+function mAlbum(){const ph=[...S.photos].sort((a,b)=>(b.at||0)-(a.at||0));
+  return `<section class="block">${head("写","Album",assets?`<button type="button" class="btn small" data-a="addphoto">+ Photo</button>`:"")}
+  ${ph.length?CITIES.map(c=>{const l=ph.filter(x=>x.city===c.id);return l.length?`<h3 style="font-size:16px;color:var(--${c.id});margin:14px 0 8px">${c.kj} ${c.name}</h3><div class="album">${l.map(x=>`<img src="/_blob/${esc(x.assetId)}" alt="${esc(c.name)}" data-a="photo" data-id="${x.id}" loading="lazy">`).join("")}</div>`:""}).join(""):`<div class="empty">${assets?"Pas encore de photo.":"Les photos sont réservées aux personnes qui peuvent modifier la page."}</div>`}</section>`}
+function mInfo(){return `<section class="block">${head("知","Infos pratiques")}<div class="card stack info">
+   <div><h3>Urgences au Japon</h3><ul><li>Police : <span class="copy">110</span></li><li>Ambulance et pompiers : <span class="copy">119</span></li><li>Japan Visitor Hotline (24 h, anglais) : <span class="copy">050-3816-2787</span></li><li>Ambassade de France à Tokyo : <span class="copy">+81 3 5798 6000</span></li><li>Pharmacie : 薬局 (yakkyoku) · hôpital : 病院 (byōin)</li></ul></div>
+   <div><h3>Médicaments</h3><p>Certains médicaments en vente libre en France sont interdits au Japon (par exemple ceux qui contiennent de la pseudoéphédrine). Au-delà d'un mois de traitement, une autorisation est nécessaire. Garder les boîtes d'origine et l'ordonnance.</p></div>
+   <div><h3>Transports</h3><ul><li>JR Pass ou billets à l'unité : depuis la hausse de prix de 2023, comparer avant d'acheter.</li><li>Carte Suica ou ICOCA (aussi sur téléphone) pour métros, bus et konbini.</li><li>Réserver les places Shinkansen avec gros bagages sur les lignes Tōkaidō et Sanyō.</li></ul></div>
+   <div><h3>Argent et vie quotidienne</h3><ul><li>Encore beaucoup de paiements en espèces : retraits faciles aux distributeurs des 7-Eleven.</li><li>Pas de pourboire.</li><li>Prises de type A, 100 V : prévoir un adaptateur.</li></ul></div>
+   <p class="sub">À vérifier avant le départ, ces infos peuvent évoluer.</p></div></section>`}
+function mNotes(){return `<section class="block">${head("記","Notes partagées")}<div class="card stack"><label for="notes">Bloc-notes commun<textarea id="notes" rows="8">${esc(notes)}</textarea></label><div class="row" style="justify-content:flex-end"><button type="button" class="btn small" data-a="savenotes">Enregistrer</button></div></div></section>`}
+function mExport(){
+  const ok=!!downloads;
+  const b=(k,t,d)=>`<button type="button" data-a="export" data-id="${k}"${ok?"":" disabled"}><b>${t}</b><span class="sub">${d}</span></button>`;
+  return `<section class="block">${head("出","Export")}<div class="card stack">
+   <div class="choice">${b("html","Planning lisible (.html)","Pour Google Drive : s'ouvre sur tous les téléphones, même sans connexion. Pour GitHub : publiable tel quel avec GitHub Pages.")}
+   ${b("md","Planning Markdown (.md)","Pour GitHub : s'affiche joliment dans un dépôt, et l'historique garde chaque version.")}
+   ${b("csv","Tableau des envies (.csv)","Pour Google Drive : s'ouvre directement dans Google Sheets (votes, prix, jours).")}
+   ${b("json","Sauvegarde complète (.json)","Pour Drive ou GitHub : toutes les données de l'app, réimportables ici.")}</div>
+   ${ok?"":`<p class="sub" style="margin:0">L'export n'est pas disponible dans cet affichage.</p>`}
+   <p class="sub" style="margin:0">Ensuite : sur Drive, dépose le fichier dans un dossier partagé « Japon 2027 ». Sur GitHub, ajoute-le dans ton dépôt avec « Add file ».</p>
+   ${isAdmin?`<button type="button" class="btn ghost" data-a="import">Importer une sauvegarde (.json)</button>`:""}</div></section>`}
+function mSettings(){const st=settings.stays||{};if(!isAdmin)return `<section class="block">${head("設","Réglages")}<div class="card"><p style="margin:0">Les noms, les dates des étapes et le taux de change sont gérés par ${esc(nm("p1"))}.</p>${window.__uid?`<p class="sub" style="margin:8px 0 0">Identifiant de cet appareil : <span class="copy">${esc(window.__uid)}</span></p>`:""}<div class="row" style="margin-top:12px"><span class="sub">Tu es ${me?esc(nm(me)):"…"}</span><button type="button" class="btn ghost small" data-a="pickme">Changer</button></div></div></section>`;
+  return `<section class="block">${head("設","Réglages")}<div class="card stack">
+   <b>Voyageurs</b>${PEOPLE.map((p,i)=>`<label for="n-${p}">Voyageur ${i+1}<input id="n-${p}" data-name="${p}" value="${esc(nm(p))}"></label>`).join("")}
+   <b>Étapes</b>${CITIES.map(c=>{const s=st[c.id]||{};return `<div class="grid3"><b style="color:var(--${c.id})">${c.name}</b><label for="f-${c.id}">Arrivée<input type="date" id="f-${c.id}" min="2027-03-04" max="2027-03-18" data-stay="${c.id}|from" value="${s.from||""}"></label><label for="t-${c.id}">Départ<input type="date" id="t-${c.id}" min="2027-03-04" max="2027-03-18" data-stay="${c.id}|to" value="${s.to||""}"></label></div>`}).join("")}
+   <label for="rate">Taux de change : yens pour 1 €<input type="number" id="rate" min="50" max="400" value="${settings.yenPerEur}"></label>
+   <div class="row" style="justify-content:flex-end"><button type="button" class="btn small" data-a="savesettings">Enregistrer</button></div>
+   <p class="sub" style="margin:0">Rôles : ${esc(nm("p1"))} gère l'organisation. Les autres proposent, votent, discutent et notent les dépenses.</p></div></section>`}
+
+/* ---------- sheets ---------- */
+function closeSheet(){$("#sheetRoot").innerHTML="";openFiche=null}
+function sheet(html){$("#sheetRoot").innerHTML=`<div class="sheet" data-a="close"><div role="dialog" aria-modal="true">${html}</div></div>`}
+const foot=del=>`<div class="foot">${del?`<button type="button" class="linkbtn danger" data-a="del" data-k="${del[0]}" data-id="${del[1]}">Supprimer</button>`:"<span></span>"}<div class="links"><button type="button" class="btn ghost" data-a="close">Annuler</button><button class="btn" type="submit">Enregistrer</button></div></div>`;
+function pickMe(){sheet(`<h2>Qui es-tu ?</h2><div class="sub">Ce choix reste sur cet appareil.</div><div class="choice">${(live&&!isAdmin?["p2","p3"]:PEOPLE).map(p=>`<button type="button" data-a="setme" data-id="${p}"><b>${esc(nm(p))}</b></button>`).join("")}</div>`)}
+function fabMenu(){
+  const c=[["addact","Une envie","Temple, quartier, expérience…"],["addresto","Un restaurant","Une adresse où manger"],["addshop","Une boutique","Souvenirs, manga, couteaux…"],["addexp","Une dépense","Sur place, qui a payé quoi"],["addck","Une tâche avant le départ","Ex. réserver l'hôtel"],["addtr","Un trajet","Vol, Shinkansen…"],["addho","Un hôtel","Avec les dates"]];
+  const adm=["addck","addtr","addho"];sheet(`<h2>Ajouter</h2><div class="choice">${c.filter(x=>isAdmin||!adm.includes(x[0])).map(([a,t,d])=>`<button type="button" data-a="${a}"><b>${t}</b><span class="sub">${d}</span></button>`).join("")}</div>`)}
+function fiche(a,keep){
+  const v=a.votes||{};const vl={up:"J'adore",meh:"Pourquoi pas",down:"Bof"};
+  const maps="https://www.google.com/maps/search/?api=1&query="+encodeURIComponent(a.title+" "+CITY[a.city].name+" Japan");
+  const cms=S.comments.filter(c=>c.act===a.id).sort((x,y)=>(x.at||0)-(y.at||0));const ph=S.photos.filter(p=>p.act===a.id);
+  const box=$("#sheetRoot .sheet>div");const scroll=keep&&box?box.scrollTop:0;
+  sheet(`<div><span class="chip city" style="--c:var(--${a.city})">${CITY[a.city].kj} ${CITY[a.city].name}</span></div><h2>${esc(a.title)}</h2>
+   <div class="meta">${a.type?`<span class="chip">${esc(a.type)}</span>`:""}${durLabel(a)?`<span class="chip">${esc(durLabel(a))}</span>`:""}${a.priceYen?`<span class="chip">${yen(a.priceYen)} / pers.</span>`:""}${a.booking==="todo"?`<span class="chip todo">À réserver${a.bookBy?" avant le "+fmtShort(a.bookBy):""}</span>`:a.booking==="done"?'<span class="chip ok">Réservé</span>':""}</div>
+   ${a.notes?`<p style="margin:0">${esc(a.notes)}</p>`:""}
+   <div class="sub">${PEOPLE.map(p=>`${esc(nm(p))} : <b>${v[p]?vl[v[p]]:"pas voté"}</b>`).join(" · ")}</div>
+   <div class="links">${a.link?`<a href="${esc(a.link)}" target="_blank" rel="noopener">Site</a>`:""}<a href="${maps}" target="_blank" rel="noopener">Google Maps</a></div>
+   <div class="card stack"><b>Quand ?</b><div class="grid2"><label for="pDay">Jour<select id="pDay"><option value="">Pas encore placé</option>${opts(DAYS.map(d=>{const cd=cityOfDay(d);return [d,fmt(d)+(cd.main?" · "+CITY[cd.main].name:"")]}),a.day)}</select></label><label for="pSlot">Moment<select id="pSlot">${opts(SLOTS,a.slot||"matin")}</select></label></div><button type="button" class="btn ghost small" data-a="doplan" data-id="${a.id}" style="align-self:flex-end">Placer dans le planning</button></div>
+   <div class="stack"><b>Discussion</b>${cms.map(c=>`<div class="cm"><b>${esc(nm(c.by))}</b>${esc(c.text)}</div>`).join("")||'<div class="sub">Pas encore de message.</div>'}
+    <form class="cmform" data-act="${a.id}"><input id="cmInput" name="t" placeholder="Ton avis…" autocomplete="off"><button class="btn small" type="submit">Envoyer</button></form></div>
+   <div class="foot">${canEdit(a)?`<button type="button" class="linkbtn danger" data-a="del" data-k="activities" data-id="${a.id}">Supprimer</button>`:"<span></span>"}<div class="links">${canEdit(a)?`<button type="button" class="btn ghost" data-a="editact" data-id="${a.id}">Modifier</button>`:""}<button type="button" class="btn" data-a="close">Fermer</button></div></div>`);
+  openFiche=a.id;const nb=$("#sheetRoot .sheet>div");if(scroll&&nb)nb.scrollTop=scroll;
+}
+function actForm(a,k){
+  a=a||{city,kind:k||kind,title:"",type:"",hours:"",priceYen:"",link:"",notes:"",booking:"",bookBy:""};const isR=(a.kind||"act")==="resto",isS=a.kind==="shop";
+  sheet(`<h2>${a.id?"Modifier":isR?"Nouveau restaurant":isS?"Nouvelle boutique":"Nouvelle envie"}</h2><form id="actForm" data-id="${a.id||""}" data-kind="${isR?"resto":isS?"shop":"act"}" class="stack">
+   <label for="fTitle">Nom<input id="fTitle" name="title" required value="${esc(a.title)}" placeholder="${isR?"Ex. Ichiran Dōtonbori":isS?"Ex. Don Quijote Dōtonbori":"Ex. Fushimi Inari-taisha"}"></label>
+   <div class="grid2"><label for="fCity">Ville<select id="fCity" name="city">${opts(CITIES.map(c=>[c.id,c.name]),a.city)}</select></label><label for="fType">${isR?"Spécialité":"Type"}<select id="fType" name="type"><option value="">—</option>${opts(typesOf(a.kind||"act").map(t=>[t,t]),a.type)}</select></label></div>
+   <div class="grid2"><label for="fDur">Durée<select id="fDur" name="hours"><option value="">—</option>${opts(DURS,a.hours)}</select></label><label for="fPrice">Prix par personne (¥)<input id="fPrice" name="priceYen" type="number" min="0" step="100" inputmode="numeric" value="${a.priceYen??""}"></label></div>
+   <details${a.link||a.notes||a.booking?" open":""}><summary class="sub" style="cursor:pointer">Plus de détails (lien, notes, réservation)</summary><div class="stack" style="margin-top:10px">
+   <label for="fLink">Lien<input id="fLink" name="link" type="url" value="${esc(a.link)}" placeholder="https://…"></label>
+   <label for="fNotes">Notes<textarea id="fNotes" name="notes">${esc(a.notes)}</textarea></label>
+   <div class="grid2"><label for="fBook">Réservation<select id="fBook" name="booking">${opts([["","Pas besoin"],["todo","À réserver"],["done","Réservé"]],a.booking||"")}</select></label><label for="fBy">À réserver avant le<input id="fBy" name="bookBy" type="date" value="${a.bookBy||""}"></label></div></div></details>
+   ${foot(a.id?["activities",a.id]:null)}</form>`);$("#fTitle").focus()}
+function trForm(t){
+  t=t||{from:"osaka",to:"hiroshima",date:"",time:"",mode:"Shinkansen",priceYen:"",ref:"",booked:false};const intl=t.from==="paris"||t.to==="paris";
+  sheet(`<h2>${t.id?"Modifier le trajet":"Nouveau trajet"}</h2><form id="trForm" data-id="${t.id||""}" class="stack">
+   <div class="grid2"><label for="tFrom">De<select id="tFrom" name="from">${opts(PLACES,t.from)}</select></label><label for="tTo">Vers<select id="tTo" name="to">${opts(PLACES,t.to)}</select></label></div>
+   <div class="grid2"><label for="tDate">Date<select id="tDate" name="date"><option value="">—</option>${opts(DAYS.map(d=>[d,fmt(d)]),t.date)}</select></label><label for="tTime">Heure<input id="tTime" name="time" type="time" value="${esc(t.time)}"></label></div>
+   <div class="grid2"><label for="tMode">Moyen<select id="tMode" name="mode">${opts(MODES.map(m=>[m,m]),t.mode)}</select></label><label for="tPrice">Prix par personne (¥)<input id="tPrice" name="priceYen" type="number" min="0" step="100" inputmode="numeric" value="${t.priceYen??""}"></label></div>
+   ${intl?`<p class="sub" style="margin:0">Le prix des vols se saisit en euros dans l'onglet Budget.</p>`:""}
+   <div class="grid2"><label for="tRef">Référence<input id="tRef" name="ref" value="${esc(t.ref)}"></label><label for="tBooked">Statut<select id="tBooked" name="booked">${opts([["0","À réserver"],["1","Réservé"]],t.booked?"1":"0")}</select></label></div>
+   ${foot(t.id?["transports",t.id]:null)}</form>`)}
+function hoForm(h){const st=settings.stays||{};const c0=city;
+  h=h||{city:c0,name:"",address:"",checkin:(st[c0]||{}).from||"",checkout:(st[c0]||{}).to||"",priceYen:"",ref:"",link:"",booked:false};
+  sheet(`<h2>${h.id?"Modifier l'hôtel":"Nouvel hôtel"}</h2><form id="hoForm" data-id="${h.id||""}" class="stack">
+   <div class="grid2"><label for="hCity">Ville<select id="hCity" name="city">${opts(CITIES.map(c=>[c.id,c.name]),h.city)}</select></label><label for="hName">Nom<input id="hName" name="name" required value="${esc(h.name)}"></label></div>
+   <label for="hAddr">Adresse<input id="hAddr" name="address" value="${esc(h.address)}"></label>
+   <div class="grid2"><label for="hIn">Arrivée<input id="hIn" name="checkin" type="date" value="${h.checkin||""}"></label><label for="hOut">Départ<input id="hOut" name="checkout" type="date" value="${h.checkout||""}"></label></div>
+   <div class="grid2"><label for="hPrice">Prix total pour 3 (¥)<input id="hPrice" name="priceYen" type="number" min="0" step="100" inputmode="numeric" value="${h.priceYen??""}"></label><label for="hBooked">Statut<select id="hBooked" name="booked">${opts([["0","À réserver"],["1","Réservé"]],h.booked?"1":"0")}</select></label></div>
+   <div class="grid2"><label for="hRef">Référence<input id="hRef" name="ref" value="${esc(h.ref)}"></label><label for="hLink">Lien<input id="hLink" name="link" type="url" value="${esc(h.link)}"></label></div>
+   ${foot(h.id?["hotels",h.id]:null)}</form>`)}
+function ckForm(i){i=i||{text:"",cat:"Documents",who:"all",due:""};
+  sheet(`<h2>${i.id?"Modifier la tâche":"Nouvelle tâche"}</h2><form id="ckForm" data-id="${i.id||""}" class="stack">
+   <label for="cText">Tâche<input id="cText" name="text" required value="${esc(i.text)}"></label>
+   <div class="grid2"><label for="cCat">Catégorie<select id="cCat" name="cat">${opts(CATS.map(c=>[c,c]),i.cat)}</select></label><label for="cWho">Qui<select id="cWho" name="who">${opts([["all","Tous"],...PEOPLE.map(p=>[p,nm(p)])],i.who||"all")}</select></label></div>
+   <label for="cDue">Pour le<input id="cDue" name="due" type="date" value="${i.due||""}"></label>
+   ${foot(i.id?["checklist",i.id]:null)}</form>`);$("#cText").focus()}
+function expForm(e){e=e||{label:"",amountYen:"",paidBy:me||"p1",split:[...PEOPLE],date:DAYS.includes(today())?today():"",city:cityOfDay(today()).main||city};
+  sheet(`<h2>${e.id?"Modifier la dépense":"Nouvelle dépense"}</h2><form id="expForm" data-id="${e.id||""}" class="stack">
+   <label for="eLabel">Quoi<input id="eLabel" name="label" required value="${esc(e.label)}" placeholder="Ex. Dîner izakaya"></label>
+   <div class="grid2"><label for="eAmt">Montant (¥)<input id="eAmt" name="amountYen" type="number" min="0" step="1" inputmode="numeric" required value="${e.amountYen??""}"></label><label for="ePaid">Payé par<select id="ePaid" name="paidBy">${opts(PEOPLE.map(p=>[p,nm(p)]),e.paidBy)}</select></label></div>
+   <div><div class="sub" style="margin-bottom:6px">Pour qui</div><div class="checks">${PEOPLE.map(p=>`<label for="s-${p}"><input type="checkbox" id="s-${p}" name="split" value="${p}"${(e.split||PEOPLE).includes(p)?" checked":""}>${esc(nm(p))}</label>`).join("")}</div></div>
+   <div class="grid2"><label for="eDate">Jour<select id="eDate" name="date"><option value="">—</option>${opts(DAYS.map(d=>[d,fmt(d)]),e.date)}</select></label><label for="eCity">Ville<select id="eCity" name="city">${opts(CITIES.map(c=>[c.id,c.name]),e.city)}</select></label></div>
+   ${foot(e.id&&canEdit(e)?["expenses",e.id]:null)}</form>`);$("#eLabel").focus()}
+function pickForSlot(iso,slot){const cd=cityOfDay(iso);
+  const cand=S.activities.filter(a=>!a.day).sort((a,b)=>(a.city===cd.main?0:1)-(b.city===cd.main?0:1)||score(b)-score(a));
+  sheet(`<h2>${fmt(iso)} · ${SLOTS.find(s=>s[0]===slot)[1]}</h2><div class="sub">${cd.main?CITY[cd.main].name+" d'abord, ":""}les plus votées en premier.</div>
+  <div>${cand.length?cand.map(a=>`<div class="line"><div><b>${esc(a.title)}</b><small>${CITY[a.city].name}${a.kind==="resto"?" · resto":a.kind==="shop"?" · boutique":""} · ${score(a)} pts${durLabel(a)?" · "+esc(durLabel(a)):""}</small></div><button type="button" class="btn ghost small" data-a="place" data-id="${a.id}|${iso}|${slot}">Placer</button></div>`).join(""):'<div class="empty">Tout est déjà placé.</div>'}</div>
+  <div class="foot"><span></span><button type="button" class="btn ghost" data-a="close">Fermer</button></div>`)}
+async function suggest(){
+  const c=CITY[city];const st=(settings.stays||{})[city]||{};const isR=kind==="resto",isS=kind==="shop";const k0=kind,c0=city;
+  const mine=S.activities.filter(a=>a.city===city&&(a.kind||"act")===kind).map(a=>a.title);
+  const liked=S.activities.filter(a=>score(a)>=3).map(a=>a.title).slice(0,15),disliked=S.activities.filter(a=>score(a)<0).map(a=>a.title).slice(0,10);
+  sheet(`<h2>Idées de Claude · ${c.name}</h2><div id="sugOut" class="sub">Claude réfléchit… (jusqu'à une minute)</div><div class="foot"><span></span><button type="button" class="btn ghost" data-a="close">Fermer</button></div>`);
+  const types=typesOf(kind);
+  const prompt=`Trois amis partent au Japon en mars 2027. Ils sont à ${c.name} du ${st.from?dp(st.from).d:"?"} au ${st.to?dp(st.to).d:"?"} mars.
+Ils ont aimé : ${liked.join(" ; ")||"pas encore de votes"}. Ils n'aiment pas : ${disliked.join(" ; ")||"rien"}.
+Déjà dans leur liste (ne pas reproposer) : ${mine.join(" ; ")||"rien"}.
+Propose 6 ${isR?"adresses où manger (lieux réels et connus, ou un type d'adresse précis dans un quartier précis)":isS?"boutiques ou rues commerçantes réelles et connues (souvenirs, artisanat, mode, manga, couteaux, papeterie…)":"activités variées et réelles"} à ${c.name}, adaptées à leurs goûts et à début mars.
+Réponds uniquement avec un tableau JSON en français : [{"title":"nom","type":"un de : ${types.join(" | ")}","hours":1|2|3|4|8,"priceYen":prix approximatif par personne en yens (0 si gratuit),"notes":"une phrase : pourquoi et un conseil pratique"}]`;
+  try{const r=await sampleFn.json(prompt,{modelTier:"default"});const arr=Array.isArray(r)?r:(r&&Array.isArray(r.items)?r.items:[]);window.__sug={list:arr,kind:k0,city:c0};
+    const out=$("#sugOut");if(!out)return;out.className="";
+    out.innerHTML=arr.length?arr.map((x,i)=>`<div class="line"><div><b>${esc(x.title)}</b><small>${esc(x.type||"")}${x.priceYen?" · ≈ "+yen(x.priceYen):""}</small><small>${esc(x.notes||"")}</small></div><button type="button" class="btn ghost small" data-a="addsug" data-id="${i}">Ajouter</button></div>`).join("")+`<p class="sub">Suggestions à vérifier (horaires, prix).</p>`:"Pas de suggestion cette fois, réessaie.";
+  }catch(e){const out=$("#sugOut");if(out)out.textContent=e&&e.code==="not_granted"?"Il faut autoriser Claude pour avoir des idées.":e&&e.code==="rate_limited"?"Trop de demandes, réessaie dans un moment.":"Claude n'a pas pu répondre, réessaie plus tard."}
+}
+function photoView(ph){const a=ph.act?S.activities.find(x=>x.id===ph.act):null;
+  sheet(`<img class="bigimg" src="/_blob/${esc(ph.assetId)}" alt=""><div><b>${esc(a?a.title:CITY[ph.city]?CITY[ph.city].name:"")}</b><div class="sub">par ${esc(nm(ph.by))}</div></div>
+  <div class="foot"><button type="button" class="linkbtn danger" data-a="delphoto" data-id="${ph.id}">Supprimer</button><button type="button" class="btn ghost" data-a="close">Fermer</button></div>`)}
+async function compress(file){try{const bmp=await createImageBitmap(file);const k=Math.min(1,1600/Math.max(bmp.width,bmp.height));const cv=document.createElement("canvas");cv.width=Math.round(bmp.width*k);cv.height=Math.round(bmp.height*k);cv.getContext("2d").drawImage(bmp,0,0,cv.width,cv.height);return await new Promise(r=>cv.toBlob(b=>r(b||file),"image/jpeg",0.82))}catch(e){return file}}
+
+/* ---------- export ---------- */
+function dayData(iso){const cd=cityOfDay(iso);return{iso,city:cd.main?CITY[cd.main].name:"Vol Paris CDG → Japon",trs:S.transports.filter(t=>t.date===iso),ho:hotelOn(iso),slots:SLOTS.map(([k,l])=>[l,S.activities.filter(a=>a.day===iso&&(a.slot||"matin")===k)])}}
+function exportHtml(){
+  const body=DAYS.map(dayData).map(d=>`<h2>${fmt(d.iso)} · ${esc(d.city)}</h2>${d.trs.map(t=>`<p>🚄 ${esc(PLACE[t.from]||t.from)} → ${esc(PLACE[t.to]||t.to)} ${esc(t.mode||"")} ${esc(t.time||"")} ${t.ref?"réf. "+esc(t.ref):""}</p>`).join("")}${d.ho?`<p>⌂ ${esc(d.ho.name)} ${esc(d.ho.address||"")}</p>`:""}${d.slots.filter(s=>s[1].length).map(([l,it])=>`<h3>${l}</h3><ul>${it.map(a=>`<li><b>${esc(a.title)}</b>${a.notes?" — "+esc(a.notes):""}${a.link?` <a href="${esc(a.link)}">lien</a>`:""}</li>`).join("")}</ul>`).join("")}`).join("");
+  return `<!doctype html><html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Japon 2027 · planning</title><style>body{font-family:system-ui,sans-serif;max-width:700px;margin:0 auto;padding:16px;line-height:1.5;background:#f5efe2;color:#2b2521}h1{color:#24386a}h2{border-bottom:2px solid #c63a22;padding-bottom:4px;margin-top:28px}h3{font-size:15px;margin:10px 0 4px;color:#7a6d60}a{color:#24386a}</style></head><body><h1>旅 Japon 2027</h1><p>${PEOPLE.map(nm).map(esc).join(", ")} · exporté le ${new Date().toLocaleDateString("fr-FR")}</p>${body}</body></html>`}
+function exportMd(){
+  return `# Japon 2027\n\n${PEOPLE.map(nm).join(", ")} · exporté le ${new Date().toLocaleDateString("fr-FR")}\n\n`+DAYS.map(dayData).map(d=>`## ${fmt(d.iso)} · ${d.city}\n\n${d.trs.map(t=>`- 🚄 ${PLACE[t.from]||t.from} → ${PLACE[t.to]||t.to} ${t.mode||""} ${t.time||""}`).join("\n")}${d.trs.length?"\n":""}${d.ho?`- ⌂ ${d.ho.name}\n`:""}${d.slots.filter(s=>s[1].length).map(([l,it])=>`\n**${l}**\n\n${it.map(a=>`- ${a.link?`[${a.title}](${a.link})`:a.title}${a.notes?" — "+a.notes:""}`).join("\n")}`).join("\n")}\n`).join("\n")}
+function exportCsv(){const q=v=>'"'+String(v??"").replace(/"/g,'""')+'"';
+  const hd=["Ville","Catégorie","Nom","Type","Durée","Prix ¥","Score",...PEOPLE.map(nm),"Jour","Moment","Réservation","Lien","Notes"];
+  const rows=S.activities.map(a=>[CITY[a.city].name,a.kind==="resto"?"Restaurant":a.kind==="shop"?"Boutique":"À faire",a.title,a.type,durLabel(a),a.priceYen,score(a),...PEOPLE.map(p=>({up:"J'adore",meh:"Pourquoi pas",down:"Bof"})[(a.votes||{})[p]]||""),a.day,a.day?(SLOTS.find(s=>s[0]===a.slot)||SLOTS[0])[1]:"",a.booking==="todo"?"À réserver":a.booking==="done"?"Réservé":"",a.link,a.notes]);
+  return "﻿"+[hd,...rows].map(r=>r.map(q).join(";")).join("\r\n")}
+function exportJson(){const data={app:"japon-2027",version:1,exportedAt:new Date().toISOString(),settings,notes};COLS.forEach(c=>data[c]=S[c]);return JSON.stringify(data,null,2)}
+async function doExport(k){if(!downloads)return;
+  const m={html:["japon-2027-planning.html",exportHtml],md:["japon-2027-planning.md",exportMd],csv:["japon-2027-envies.csv",exportCsv],json:["japon-2027-sauvegarde.json",exportJson]}[k];if(!m)return;
+  try{await downloads.save({filename:m[0],data:m[1]()});toast("Fichier enregistré")}catch(e){if(!e||e.code!=="declined")toast("Export impossible ici")}}
+async function doImport(file){
+  try{const d=JSON.parse(await file.text());if(!d||d.app!=="japon-2027"){toast("Ce fichier n'est pas une sauvegarde de l'app");return}
+    let n=0;for(const c of COLS){for(const r of (d[c]||[])){if(!r||!r.id)continue;const {id,...rest}=r;await save(c,id,rest);n++}}
+    if(d.settings){settings={...settings,...d.settings};await saveDoc("trip/settings",settings)}
+    if(typeof d.notes==="string"){notes=d.notes;await saveDoc("trip/notes",{text:notes})}
+    toast(n+" éléments importés");render()}catch(e){toast("Import impossible : fichier illisible")}}
+
+/* ---------- events ---------- */
+function setTab(t){tab=t;try{localStorage.setItem("tabi-tab",t)}catch(_){}render();window.scrollTo(0,0);const v=$("#view");v.classList.add("anim");clearTimeout(setTab.t);setTab.t=setTimeout(()=>v.classList.remove("anim"),400)}
+document.addEventListener("click",e=>{
+  const t=e.target.closest("[data-a],[data-tab]");if(!t)return;
+  if(t.dataset.tab){setTab(t.dataset.tab);return}
+  const a=t.dataset.a,id=t.dataset.id;
+  if(a==="close"){if(t.classList.contains("sheet")&&e.target!==t)return;closeSheet();return}
+  const cardEl=t.closest(".act");const act=cardEl&&S.activities.find(x=>x.id===cardEl.dataset.id);
+  const lineEl=t.closest(".line[data-id],.exp[data-id]");
+  switch(a){
+   case "pickme":pickMe();break;
+   case "setme":me=id;try{localStorage.setItem("tabi-me",me)}catch(_){}closeSheet();render();break;
+   case "fab":fabMenu();break;
+   case "city":city=id;try{localStorage.setItem("tabi-city",city)}catch(_){}render();break;
+   case "kind":kind=id;render();break;
+   case "filter":filter=id;render();break;
+   case "planview":planView=id;render();break;
+   case "more":more=id;render();break;
+   case "ckall":ckAll=!ckAll;render();break;
+   case "govote":filter="tovote";setTab("acts");break;
+   case "open":if(act)fiche(act);break;
+   case "addact":actForm(null,"act");break;
+   case "addresto":actForm(null,"resto");break;
+   case "addshop":actForm(null,"shop");break;
+   case "addtr":if(adminOnly())break;trForm();break;
+   case "addho":if(adminOnly())break;hoForm();break;
+   case "addck":if(adminOnly())break;ckForm();break;
+   case "addexp":expForm();break;
+   case "suggest":suggest();break;
+   case "idea":{const i=IDEAS[city][+id];if(!i)return;save("activities",newId("a"),{kind:"act",city,title:i[0],type:i[1],hours:i[2],notes:i[3],priceYen:"",link:"",booking:"",bookBy:"",by:me||"p1",votes:me?{[me]:"up"}:{},day:"",slot:"",createdAt:Date.now()});toast("Ajoutée avec ton « J'adore »");break}
+   case "addsug":{const sg=window.__sug;const x=sg&&sg.list[+id];if(!x)return;save("activities",newId("a"),{kind:sg.kind,city:sg.city,title:String(x.title||""),type:String(x.type||""),hours:Number(x.hours)||"",priceYen:Number(x.priceYen)||"",notes:String(x.notes||""),link:"",booking:"",bookBy:"",by:me||"p1",votes:me?{[me]:"up"}:{},day:"",slot:"",createdAt:Date.now(),fromClaude:true});t.textContent="Ajouté";t.disabled=true;break}
+   case "vote":if(!act)return;if(!me){pickMe();return}{const cur=(act.votes||{})[me];patch("activities",act.id,{votes:{[me]:cur===t.dataset.v?"":t.dataset.v}})}break;
+   case "editact":{const x=S.activities.find(y=>y.id===id);if(x){openFiche=null;actForm(x)}}break;
+   case "doplan":patch("activities",id,{day:$("#pDay").value,slot:$("#pSlot").value});toast($("#pDay").value?"Placé dans le planning":"Retiré du planning");break;
+   case "pick":{const [d,s]=id.split("|");pickForSlot(d,s);break}
+   case "place":{const [x,d,s]=id.split("|");patch("activities",x,{day:d,slot:s});closeSheet();toast("Placé");break}
+   case "unplan":patch("activities",id,{day:"",slot:""});break;
+   case "edittr":if(adminOnly())break;if(lineEl){const x=S.transports.find(y=>y.id===lineEl.dataset.id);if(x)trForm(x)}break;
+   case "editho":if(adminOnly())break;if(lineEl){const x=S.hotels.find(y=>y.id===lineEl.dataset.id);if(x)hoForm(x)}break;
+   case "editexp":if(lineEl){const x=S.expenses.find(y=>y.id===lineEl.dataset.id);if(x){if(!canEdit(x)){toast("Seul "+nm(x.by||"p1")+" peut modifier cette dépense");break}expForm(x)}}break;
+   case "tick":{if(adminOnly())break;const row=t.closest(".ck");const it=row&&S.checklist.find(x=>x.id===row.dataset.id);if(it)patch("checklist",it.id,{done:!it.done,doneBy:!it.done?(me||""):""});break}
+   case "editck":{if(adminOnly())break;const row=t.closest(".ck");const it=row&&S.checklist.find(x=>x.id===row.dataset.id);if(it)ckForm(it);break}
+   case "booked":{if(adminOnly())break;const col={act:"activities",tr:"transports",ho:"hotels"}[t.dataset.k];patch(col,id,col==="activities"?{booking:"done"}:{booked:true});toast("Noté comme réservé");break}
+   case "del":{if(t.dataset.armed){remove(t.dataset.k,id);closeSheet();toast("Supprimé")}else{t.dataset.armed="1";t.textContent="Confirmer la suppression";setTimeout(()=>{if(t.isConnected){delete t.dataset.armed;t.textContent="Supprimer"}},3000)}break}
+   case "addphoto":if(!assets)return;{const x=id?S.activities.find(y=>y.id===id):null;photoCtx={act:x?x.id:"",city:x?x.city:(cityOfDay(today()).main||city)};$("#photoInput").value="";$("#photoInput").click()}break;
+   case "photo":{const ph=S.photos.find(x=>x.id===id);if(ph){openFiche=null;photoView(ph)}break}
+   case "delphoto":{const ph=S.photos.find(x=>x.id===id);if(!ph)return;if(!t.dataset.armed){t.dataset.armed="1";t.textContent="Confirmer la suppression";return}remove("photos",ph.id);if(assets)assets.delete(ph.assetId).catch(()=>{});closeSheet();toast("Photo supprimée");break}
+   case "export":doExport(id);break;
+   case "import":if(adminOnly())break;$("#importInput").value="";$("#importInput").click();break;
+   case "saveflight":{if(adminOnly())break;const v=$("#flightEur").value;settings={...settings,flightEur:v===""?"":Number(v)};saveDoc("trip/settings",settings);render();toast("Prix des vols enregistré");break}
+   case "savenotes":notes=$("#notes").value;saveDoc("trip/notes",{text:notes});toast("Notes enregistrées");break;
+   case "savesettings":{if(adminOnly())break;const s=JSON.parse(JSON.stringify(settings));
+     document.querySelectorAll("[data-name]").forEach(i=>{s.names[i.dataset.name]=i.value.trim()||s.names[i.dataset.name]});
+     document.querySelectorAll("[data-stay]").forEach(i=>{const [c,k]=i.dataset.stay.split("|");s.stays[c]=s.stays[c]||{};s.stays[c][k]=i.value});
+     const r=Number($("#rate").value);if(r>0)s.yenPerEur=r;settings=s;saveDoc("trip/settings",s);render();toast("Réglages enregistrés");break}
+  }
+});
+const num=v=>v===""?"":Number(v);
+document.addEventListener("submit",e=>{
+  const f=e.target;e.preventDefault();const fd=new FormData(f);const g=k=>String(fd.get(k)??"").trim();const id=f.dataset.id;
+  if(f.classList.contains("cmform")){const txt=g("t");if(!txt)return;if(!me){pickMe();return}save("comments",newId("c"),{act:f.dataset.act,by:me,text:txt,at:Date.now()});f.reset();document.activeElement&&document.activeElement.blur();return}
+  if(f.id==="actForm"){const base=id?S.activities.find(a=>a.id===id):null;
+    const data={kind:f.dataset.kind||"act",city:g("city"),title:g("title"),type:g("type"),hours:num(g("hours")),priceYen:num(g("priceYen")),booking:g("booking"),bookBy:g("bookBy"),link:g("link"),notes:g("notes")};if(!data.title)return;
+    if(base){const {id:_,...rest}=base;save("activities",id,{...rest,...data})}else save("activities",newId("a"),{...data,by:me||"p1",votes:me?{[me]:"up"}:{},day:"",slot:"",createdAt:Date.now()});
+    city=data.city;kind=data.kind;closeSheet();if(tab!=="acts")setTab("acts");else render();toast(base?"Modifié":"Ajouté avec ton « J'adore »");return}
+  if(f.id==="trForm"){save("transports",id||newId("t"),{from:g("from"),to:g("to"),date:g("date"),time:g("time"),mode:g("mode"),priceYen:num(g("priceYen")),ref:g("ref"),notes:"",booked:g("booked")==="1"});closeSheet();toast("Trajet enregistré");return}
+  if(f.id==="hoForm"){const data={city:g("city"),name:g("name"),address:g("address"),checkin:g("checkin"),checkout:g("checkout"),priceYen:num(g("priceYen")),ref:g("ref"),link:g("link"),booked:g("booked")==="1"};if(!data.name)return;save("hotels",id||newId("h"),data);closeSheet();toast("Hôtel enregistré");return}
+  if(f.id==="ckForm"){const base=id?S.checklist.find(x=>x.id===id):null;const data={text:g("text"),cat:g("cat"),who:g("who"),due:g("due")};if(!data.text)return;
+    save("checklist",id||newId("k"),{done:false,doneBy:"",notes:"",createdAt:Date.now(),...(base?(({id:_,...r})=>r)(base):{}),...data});closeSheet();toast("Tâche enregistrée");return}
+  if(f.id==="expForm"){const split=fd.getAll("split").map(String);const data={label:g("label"),amountYen:Number(g("amountYen"))||0,paidBy:g("paidBy"),split:split.length?split:[...PEOPLE],date:g("date"),city:g("city")};if(!data.label)return;
+    const base=id?S.expenses.find(x=>x.id===id):null;save("expenses",id||newId("e"),{at:base?base.at:Date.now(),by:me||"",...data});closeSheet();toast("Dépense enregistrée");return}
+});
+$("#importInput").addEventListener("change",e=>{const f=e.target.files&&e.target.files[0];if(f)doImport(f)});
+document.addEventListener("keydown",e=>{if(e.key==="Escape")closeSheet()});
+
+/* ---------- boot ---------- */
+render();
+(async()=>{
+  const use=async n=>{try{return window.claude?await window.claude.use(n):null}catch(e){return null}};
+  let userNs;[db,sampleFn,downloads,userNs]=await Promise.all([use("db"),use("sample"),use("downloads"),use("user")]);
+  if(!db){render();const b=$("#banner");b.hidden=false;b.textContent="Mode aperçu : la base Firebase n'est pas encore configurée (voir config.js), rien n'est enregistré.";return}
+  live=true;
+  try{isAdmin=userNs?!!(await userNs.isOwner()):false}catch(e){isAdmin=false}
+  if(isAdmin){me="p1";try{localStorage.setItem("tabi-me","p1")}catch(_){}}else if(me==="p1"){me=null}
+  render();
+  COLS.forEach(col=>db.collection(col).onSnapshot(s=>{S[col]=s.docs.map(d=>({id:d.id,...d.data()}));refresh()},()=>toast("Connexion perdue, recharge la page")));
+  db.doc("trip/settings").onSnapshot(s=>{if(s.exists){const d=s.data();settings={...DEFAULT_SETTINGS,...d,names:{...DEFAULT_SETTINGS.names,...(d.names||{})},stays:{...DEFAULT_SETTINGS.stays,...(d.stays||{})}}}refresh()});
+  db.doc("trip/notes").onSnapshot(s=>{notes=s.exists?String(s.data().text||""):"";refresh()});
+  if(!me)pickMe();
+})();
+})();
+</script>
+
+</body></html>
