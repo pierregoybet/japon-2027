@@ -13,5 +13,4 @@ window.FIREBASE_CONFIG = {
 // 2. Identifiants des appareils de Pierre (administrateur).
 //    Ouvre le site, va dans Plus › Réglages, copie « Identifiant de cet appareil »
 //    et colle-le ici (un par appareil : téléphone, ordinateur…).
-window.ADMIN_UIDS = ["d3FSO3xx2hePQBCUIYusIiW1jkO2"
-];
+window.ADMIN_UIDS = ["d3FSO3xx2hePQBCUIYusIiW1jkO2"];
