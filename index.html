@@ -310,6 +310,77 @@ nav.tabs button b{border-radius:999px}
 .logo{width:66px;height:44px;flex:none;border-radius:8px;overflow:hidden;box-shadow:0 0 0 2.5px #fff,0 4px 12px rgba(0,0,0,.25);display:block}
 header.top::after{display:none}
 .tabs2 button{font-size:13px;padding:8px 4px;white-space:nowrap}
+
+.ph{margin:-4px -4px 2px;border-radius:16px;overflow:hidden;position:relative;background:var(--soft);aspect-ratio:16/9;max-height:240px}
+.ph:empty{animation:phpulse 1.2s ease-in-out infinite alternate}
+@keyframes phpulse{from{opacity:.5}to{opacity:1}}
+.ph img{width:100%;height:100%;object-fit:cover;display:block}
+.ph .credit{position:absolute;right:8px;bottom:6px;font-size:11px;color:#fff;background:rgba(0,0,0,.45);padding:1px 7px;border-radius:99px;text-decoration:none}
+.mapwrap2 svg{width:100%;height:auto;display:block}
+.mbg{fill:var(--soft)} .mg{stroke:var(--line);stroke-width:1} .ms{fill:var(--muted)} .mt{font-size:10px;fill:var(--muted)}
+.md{cursor:pointer} .md:hover circle,.md:focus circle{stroke:var(--sumi)}
+.mn{font-size:10px;font-weight:700;fill:#fff;text-anchor:middle;pointer-events:none}
+.legend{display:flex;flex-wrap:wrap;gap:12px;font-size:12px;color:var(--muted);margin-top:10px}
+.legend i{display:inline-block;width:10px;height:10px;border-radius:50%;margin-right:5px;vertical-align:-1px}
+.mr{fill:none;stroke:#8fb6e8;stroke-width:6;stroke-linecap:round;stroke-linejoin:round;opacity:.7}
+.legend i.rv{border-radius:2px;height:4px;background:#8fb6e8;vertical-align:2px}
+.legend i.sq{border-radius:2px;background:var(--muted)}
+.num{display:inline-grid;place-items:center;min-width:20px;height:20px;border-radius:50%;color:#fff;font-size:11px;margin-right:8px;padding:0 4px}
+.bar{gap:8px}
+
+[hidden]{display:none!important}
+body.swmode .fab{display:none}
+.swcount{text-align:center;margin-top:4px}
+.swdeck{position:relative;height:min(calc(100vh - 430px),480px);min-height:300px;margin:10px auto 0;max-width:420px;touch-action:none}
+.sw{position:absolute;inset:0;background:var(--paper);border-radius:24px;box-shadow:var(--shadow);overflow:hidden;display:flex;flex-direction:column;user-select:none;-webkit-user-select:none;cursor:grab;transform:scale(.95) translateY(10px);transition:transform .2s}
+.sw.top{transform:none;z-index:2}
+.swph{flex:1;min-height:0;position:relative;background:linear-gradient(150deg,var(--c),var(--ai));display:grid;place-items:center;overflow:hidden}
+.swph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;pointer-events:none}
+.swkj{font-family:var(--display);font-size:96px;font-weight:800;color:#fff;opacity:.35}
+.swbody{padding:14px 16px 16px;display:flex;flex-direction:column;gap:6px}
+.swbody h3{font-size:21px;line-height:1.25}
+.swbody p{margin:0;font-size:14px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.swstamp{position:absolute;top:28px;padding:4px 14px;border:4px solid;border-radius:10px;font-family:var(--display);font-weight:800;font-size:26px;letter-spacing:.06em;opacity:0;z-index:3;background:rgba(255,255,255,.85);pointer-events:none}
+.swstamp.like{left:22px;color:var(--good);transform:rotate(-14deg)}
+.swstamp.nope{right:22px;color:var(--bad);transform:rotate(14deg)}
+.swstamp.love{left:50%;top:auto;bottom:42%;transform:translateX(-50%) rotate(-6deg);color:var(--tokyo)}
+.swbtns{display:flex;justify-content:center;align-items:center;gap:14px;margin-top:16px}
+.swb{width:58px;height:58px;border-radius:50%;border:0;background:var(--paper);box-shadow:var(--shadow);font-size:26px;display:grid;place-items:center;transition:transform .1s}
+.swb:active{transform:scale(.9)}
+.swb.undo,.swb.skip{width:44px;height:44px;font-size:19px;color:var(--muted)}
+.swb.undo:disabled{opacity:.35}
+.swb.nope{color:var(--bad)} .swb.like{color:var(--good)} .swb.love{color:var(--tokyo);width:50px;height:50px;font-size:22px}
+.swhelp{text-align:center;margin-top:10px}
+.swdone{display:flex;flex-direction:column;gap:10px;align-items:center}
+.swdone .big{font-size:44px}
+.swb.undo{position:relative}
+.swn{position:absolute;top:-4px;right:-4px;min-width:18px;height:18px;border-radius:9px;background:var(--sumi);color:var(--paper);font-size:11px;display:grid;place-items:center;padding:0 4px}
+@media (prefers-reduced-motion:no-preference){.sw.top.back{animation:swback .3s ease}}
+@keyframes swback{from{transform:translateY(-40px) scale(.9);opacity:0}to{transform:none;opacity:1}}
+.swstamp.later{left:50%;top:22px;transform:translateX(-50%) rotate(4deg);color:var(--muted);font-size:22px}
+.swagain{position:absolute;top:12px;left:12px;z-index:2;background:rgba(0,0,0,.55);color:#fff;font-size:12px;padding:3px 10px;border-radius:99px}
+
+.illu{position:absolute;inset:0;display:grid;place-items:center;background:linear-gradient(150deg,var(--c),var(--ai));overflow:hidden}
+.illu svg{width:46%;max-width:180px;height:auto;filter:drop-shadow(0 6px 14px rgba(0,0,0,.18))}
+.illu span{position:absolute;right:12px;bottom:6px;font-family:var(--display);font-weight:800;font-size:34px;color:#fff;opacity:.35}
+.ph{position:relative;flex:none;height:190px;aspect-ratio:auto;max-height:none}
+.ph .illu svg{width:auto;height:62%}
+.ph:empty{animation:none}
+.ph img,.swph img{position:absolute;inset:0;z-index:1}
+.ph .credit{z-index:2}
+
+.crowd{display:inline-flex;align-items:center;gap:1px;vertical-align:middle}
+.crowd svg{width:17px;height:17px;display:block}
+.sheet .crowd svg{width:22px;height:22px}
+.crowd b{font-size:13px;margin-left:6px}
+.crowd.unk{font-size:12px;color:var(--muted)}
+.line small .crowd svg{width:12px;height:12px}
+.crowdset{display:flex;flex-direction:column;gap:4px}
+.crowdbtns{display:flex;align-items:center;gap:2px}
+.crowdbtns button{border:0;background:none;padding:3px;border-radius:8px;line-height:0}
+.crowdbtns button:hover{background:var(--soft)}
+.crowdbtns svg{width:26px;height:26px}
+.crowdbtns b{font-size:14px;margin-left:8px}
 </style>
 
 <header class="top seigaiha">
@@ -346,6 +417,7 @@ header.top::after{display:none}
   firebase.initializeApp(cfg);
   var ready=firebase.auth().signInAnonymously().then(function(c){window.__uid=c.user.uid;return c.user}).catch(function(e){console.error(e);return null});
   var fs=firebase.firestore();
+  window.__flatUpdate=true; /* Firestore : update() remplace les objets imbriqués, on écrit votes.p1 au lieu de votes */
   var admins=window.ADMIN_UIDS||[];
   window.claude={use:async function(n){
     var u=await ready;if(!u)return null;
@@ -390,6 +462,7 @@ const COLS=["activities","transports","hotels","comments","checklist","expenses"
 const S=Object.fromEntries(COLS.map(c=>[c,[]]));
 let settings=JSON.parse(JSON.stringify(DEFAULT_SETTINGS)), notes="";
 let me=null; try{me=localStorage.getItem("tabi-me")}catch(e){}
+let actView="list";try{actView=localStorage.getItem("tabi-view")||"list"}catch(e){}
 let tab="home", city="osaka", kind="act", filter="all", planView="days", more="manners", openFiche=null, photoCtx=null, ckAll=false;
 try{city=localStorage.getItem("tabi-city")||"osaka";const t=localStorage.getItem("tabi-tab");if(["home","acts","plan","budget","more"].includes(t))tab=t}catch(e){}
 if(!CITY[city])city="osaka";
@@ -408,7 +481,7 @@ function today(){const d=new Date();return d.getFullYear()+"-"+String(d.getMonth
 const VAL={up:2,meh:1,down:-2};
 const score=a=>PEOPLE.reduce((s,k)=>s+(VAL[(a.votes||{})[k]]||0),0);
 const nVotes=a=>PEOPLE.filter(k=>(a.votes||{})[k]).length;
-const kept=a=>{const v=a.votes||{};return PEOPLE.filter(k=>v[k]==="up").length>=2&&!PEOPLE.some(k=>v[k]==="down")};
+const kept=a=>{const v=a.votes||{};return score(a)>=3&&!PEOPLE.some(k=>v[k]==="down")};
 const unanimous=a=>PEOPLE.every(k=>(a.votes||{})[k]==="up");
 const hours=a=>Number(a.hours)||0;
 function durLabel(a){const d=DURS.find(x=>x[0]===Number(a.hours));return d?d[1]:(a.duration||"")}
@@ -418,12 +491,117 @@ function cityOfDay(iso){const st=settings.stays||{};let main=null,from=null;
  for(const c of CITIES){const s=st[c.id];if(s&&s.to===iso&&c.id!==main)from=c.id}
  return{main,from}}
 const hotelOn=iso=>S.hotels.find(h=>h.checkin&&h.checkout&&iso>=h.checkin&&iso<h.checkout);
+
+/* Positions (lat, lng) et page Wikipédia (en) des lieux proposés au départ */
+const GEO={
+s01:[34.6687,135.5013,"Dōtonbori"],s02:[34.6873,135.5262,"Osaka Castle"],s03:[34.6655,135.5065,"Kuromon Market"],s04:[34.6525,135.5063,"Tsūtenkaku"],s05:[34.6890,135.8398,"Tōdai-ji"],
+s06:[34.6654,135.4323,"Universal Studios Japan"],s07:[34.7053,135.4896,"Umeda Sky Building"],s08:[34.6545,135.4290,"Osaka Aquarium Kaiyukan"],s09:[34.6720,135.5005,"Shinsaibashi"],
+s10:[34.6688,135.5030,"Okonomiyaki"],s11:[34.6687,135.5013,"Takoyaki"],s12:[34.6520,135.5060,"Kushikatsu"],s13:[34.6686,135.5040,"Ramen"],
+s14:[34.3925,132.4528,"Hiroshima Peace Memorial"],s15:[34.2960,132.3198,"Itsukushima Shrine"],s16:[34.4027,132.4594,"Hiroshima Castle"],s17:[34.4005,132.4675,"Shukkei-en"],
+s18:[34.3916,132.4609,"Okonomiyaki"],s19:[34.2985,132.3215,"Miyajima"],s20:[34.2985,132.3215,"Itsukushima"],s21:[null,null,"Momiji manjū"],
+s22:[34.9671,135.7727,"Fushimi Inari-taisha"],s23:[35.0394,135.7292,"Kinkaku-ji"],s24:[35.0094,135.6668,"Arashiyama"],s25:[35.0036,135.7750,"Gion"],s26:[34.9949,135.7850,"Kiyomizu-dera"],
+s27:[35.0050,135.7649,"Nishiki Market"],s28:[35.0270,135.7982,"Ginkaku-ji"],s29:[35.0142,135.7482,"Nijō Castle"],s30:[35.0345,135.7183,"Ryōan-ji"],s31:[null,null,"Japanese tea ceremony"],
+s32:[35.0058,135.7710,"Pontochō"],s33:[35.0113,135.7944,"Nanzen-ji"],s34:[35.0036,135.7750,"Kaiseki"],s35:[35.0036,135.7760,"Matcha"],
+s36:[35.7148,139.7967,"Sensō-ji"],s37:[35.6595,139.7005,"Shibuya Crossing"],s38:[35.6764,139.6993,"Meiji Shrine"],s39:[35.6490,139.7898,"TeamLab Planets"],s40:[35.6655,139.7707,"Tsukiji fish market"],
+s41:[35.6938,139.7034,"Golden Gai"],s42:[35.6984,139.7731,"Akihabara"],s43:[35.7148,139.7740,"Ueno Park"],s44:[35.6852,139.7101,"Shinjuku Gyo-en"],s45:[35.7101,139.8107,"Tokyo Skytree"],
+s46:[35.2330,139.1070,"Hakone"],s47:[35.6613,139.6680,"Shimokitazawa"],s48:[null,null,"Sushi"],s49:[35.6880,139.6970,"Tsukemen"],s50:[35.6630,139.7820,"Monjayaki"],s51:[null,null,"Tempura"],s52:[35.6930,139.7000,"Izakaya"],
+b01:[34.6688,135.5030,"Don Quijote (store)"],b02:[34.6655,135.5050,"Sennichimae"],b03:[34.6590,135.5060,"Nipponbashi"],b04:[34.7030,135.4985,"Hankyu Department Store"],
+b05:[34.3930,132.4570,"Hondōri"],b06:[null,null,"Kumano brush"],b07:[34.2985,132.3215,"Miyajima"],
+b08:[34.9965,135.7810,"Sannenzaka"],b09:[35.0050,135.7649,"Nishiki Market"],b10:[35.0130,135.7670,"Ippodo Tea"],b11:[35.0055,135.7680,"Teramachi Street"],
+b12:[35.7135,139.7880,"Kappabashi"],b13:[35.6720,139.7670,"Ginza"],b14:[35.6620,139.6990,"Pokémon Center"],b15:[35.6613,139.6680,"Shimokitazawa"],b16:[35.6605,139.6990,"Don Quijote (store)"],b17:[35.6710,139.7650,"Uniqlo"]};
+const CITYGEO={osaka:{c:[34.680,135.500],r:9},hiroshima:{c:[34.395,132.460],r:6},kyoto:{c:[35.005,135.750],r:9},tokyo:{c:[35.685,139.740],r:12}};
+const STATIONS={osaka:[["Umeda",34.7025,135.4959],["Namba",34.6660,135.5000],["Shin-Ōsaka",34.7335,135.5002],["Tennōji",34.6465,135.5135]],
+ hiroshima:[["Gare",34.3976,132.4753],["Kamiyachō",34.3946,132.4573]],
+ kyoto:[["Gare de Kyoto",34.9858,135.7588],["Kawaramachi",35.0037,135.7690]],
+ tokyo:[["Tokyo",35.6812,139.7671],["Shinjuku",35.6896,139.7006],["Shibuya",35.6580,139.7016],["Ueno",35.7138,139.7773],["Shinagawa",35.6285,139.7388]]};
+const RIVERS={kyoto:["Kamo",[[35.06,135.770],[35.03,135.772],[35.01,135.771],[34.99,135.769],[34.955,135.764]]],
+ tokyo:["Sumida",[[35.76,139.805],[35.73,139.800],[35.705,139.796],[35.685,139.786],[35.665,139.781],[35.645,139.776]]],
+ osaka:["Ōkawa",[[34.725,135.545],[34.705,135.527],[34.695,135.515],[34.692,135.500],[34.690,135.480],[34.685,135.455]]],
+ hiroshima:["Ōta",[[34.430,132.470],[34.410,132.460],[34.398,132.453],[34.385,132.451],[34.365,132.448]]]};
+const KINDCOL={act:"var(--shu)",resto:"var(--osaka)",shop:"var(--tokyo)"};
+function geoOf(a){if(a.lat!=null&&a.lat!==""&&a.lng!=null)return[Number(a.lat),Number(a.lng)];const g=GEO[a.id];return g&&g[0]!=null?[g[0],g[1]]:null}
+function km(a,b){const R=6371,d=Math.PI/180,x=(b[1]-a[1])*d*Math.cos((a[0]+b[0])/2*d),y=(b[0]-a[0])*d;return Math.sqrt(x*x+y*y)*R}
+
+
+/* Fréquentation touristique : 1 = peu touristique … 4 = extrêmement touristique (estimation d'après la réputation des lieux) */
+const CROWD_ID={s01:4,s02:4,s03:4,s04:3,s05:4,s06:4,s07:3,s08:3,s09:3,s10:4,s11:4,s12:3,s13:3,s14:4,s15:4,s16:2,s17:2,s18:3,s19:3,s20:3,s21:3,
+ s22:4,s23:4,s24:4,s25:4,s26:4,s27:4,s28:3,s29:3,s30:3,s31:2,s32:3,s33:2,s34:2,s35:3,s36:4,s37:4,s38:4,s39:4,s40:4,s41:3,s42:3,s43:3,s44:2,s45:3,s46:3,s47:2,s48:2,s49:3,s50:2,s51:2,s52:2,
+ b01:4,b02:2,b03:2,b04:3,b05:2,b06:1,b07:4,b08:4,b09:3,b10:2,b11:2,b12:2,b13:3,b14:4,b15:2,b16:4,b17:3};
+const CROWD_COL=["","#2f9e5b","#cf9a00","#ec7a14","#d63a2f"];
+const CROWD_TXT=["Fréquentation non renseignée","Peu touristique","Un peu touristique","Très touristique","Extrêmement touristique"];
+const PERSON='<path d="M12 2.2a3.3 3.3 0 1 1 0 6.6 3.3 3.3 0 0 1 0-6.6zM6.5 21.5v-6.8c0-2.9 2.3-5 5.5-5s5.5 2.1 5.5 5v6.8z"/>';
+function crowdOf(a){const v=Number(a.crowd);return v>=1&&v<=4?v:(CROWD_ID[a.id]||0)}
+function crowdHtml(lv,label){if(!lv)return label?`<span class="crowd unk">${CROWD_TXT[0]}</span>`:"";
+  return `<span class="crowd" title="${CROWD_TXT[lv]}" aria-label="${CROWD_TXT[lv]}">${[1,2,3,4].map(i=>`<svg viewBox="0 0 24 24" fill="${i<=lv?CROWD_COL[lv]:"var(--line)"}">${PERSON}</svg>`).join("")}${label?`<b style="color:${CROWD_COL[lv]}">${CROWD_TXT[lv]}</b>`:""}</span>`}
+/* Illustrations dessinées (affichées quand aucune photo n'est disponible) */
+const ICONS={
+ torii:'<rect x="30" y="44" width="8" height="58" rx="2"/><rect x="82" y="44" width="8" height="58" rx="2"/><path d="M14 28 Q60 18 106 28 L104 38 Q60 30 16 38 Z"/><rect x="22" y="46" width="76" height="7" rx="2"/><rect x="56" y="38" width="8" height="10"/>',
+ lantern:'<rect x="54" y="10" width="12" height="8" rx="2"/><ellipse cx="60" cy="58" rx="30" ry="38"/><rect x="50" y="94" width="20" height="8" rx="2"/><g stroke="var(--c)" stroke-width="2.5" fill="none" opacity=".45"><path d="M32 40 Q60 46 88 40"/><path d="M30 58 Q60 64 90 58"/><path d="M32 76 Q60 82 88 76"/></g>',
+ museum:'<path d="M60 12 L108 38 L12 38 Z"/><rect x="18" y="42" width="84" height="6" rx="1"/><rect x="24" y="52" width="10" height="38"/><rect x="45" y="52" width="10" height="38"/><rect x="66" y="52" width="10" height="38"/><rect x="86" y="52" width="10" height="38"/><rect x="14" y="94" width="92" height="9" rx="2"/>',
+ fuji:'<path d="M8 100 L48 40 Q60 30 72 40 L112 100 Z"/><path d="M48 40 Q60 30 72 40 L80 52 L72 48 L66 56 L60 48 L54 56 L48 48 L40 52 Z" fill="var(--c)" opacity=".35"/><circle cx="92" cy="26" r="10"/>',
+ tree:'<rect x="55" y="62" width="10" height="40" rx="3"/><circle cx="60" cy="42" r="22"/><circle cx="38" cy="52" r="16"/><circle cx="82" cy="52" r="16"/><circle cx="48" cy="30" r="14"/><circle cx="74" cy="30" r="14"/>',
+ bag:'<path d="M26 40 H94 L88 104 H32 Z"/><path d="M44 42 V32 Q60 14 76 32 V42" fill="none" stroke="#fff" stroke-width="6"/>',
+ tea:'<path d="M22 50 H90 Q88 92 56 94 Q24 92 22 50 Z"/><path d="M88 58 Q106 58 104 72 Q102 84 84 82" fill="none" stroke="#fff" stroke-width="6"/><g fill="none" stroke="#fff" stroke-width="4" stroke-linecap="round" opacity=".7"><path d="M44 40 Q38 30 44 20"/><path d="M60 40 Q54 30 60 18"/><path d="M76 40 Q70 30 76 20"/></g><rect x="20" y="98" width="72" height="6" rx="3"/>',
+ moon:'<path d="M76 14 A40 40 0 1 0 104 72 A32 32 0 1 1 76 14 Z"/><circle cx="34" cy="22" r="3"/><circle cx="18" cy="48" r="2.5"/><circle cx="52" cy="10" r="2"/>',
+ ramen:'<path d="M12 52 H108 Q104 96 60 98 Q16 96 12 52 Z"/><g stroke="#fff" stroke-width="5" stroke-linecap="round"><path d="M70 46 L104 12"/><path d="M80 46 L112 18"/></g><g fill="none" stroke="#fff" stroke-width="4" stroke-linecap="round" opacity=".7"><path d="M36 42 Q30 32 36 22"/><path d="M52 42 Q46 30 52 20"/></g>',
+ sushi:'<rect x="18" y="58" width="84" height="30" rx="14"/><path d="M14 54 Q60 30 106 54 Q104 64 60 62 Q16 64 14 54 Z" fill="#fff" opacity=".85"/><g stroke="var(--c)" stroke-width="3" opacity=".4"><path d="M40 46 L48 58"/><path d="M60 42 L66 58"/><path d="M80 46 L84 58"/></g>'};
+function iconFor(a){const t=(a.type||"").toLowerCase(),k=a.kind||"act";
+  if(k==="resto"){if(/sushi/.test(t))return"sushi";if(/café|dessert|thé/.test(t))return"tea";return"ramen"}
+  if(k==="shop")return"bag";
+  if(/temple|sanctuaire/.test(t))return"torii";if(/musée/.test(t))return"museum";if(/nature|jardin/.test(t))return"tree";
+  if(/excursion/.test(t))return"fuji";if(/nocturne/.test(t))return"moon";if(/marché|shopping/.test(t))return"bag";
+  if(/expérience/.test(t))return"tea";return"lantern"}
+function illuHtml(a){return `<div class="illu" style="--c:var(--${a.city})"><svg viewBox="0 0 120 120" aria-hidden="true" fill="#fff">${ICONS[iconFor(a)]}</svg><span>${CITY[a.city].kj}</span></div>`}
+/* Photos Wikipédia (cache local, les échecs sont retentés après 2 jours) */
+const PHOTO_CACHE={};try{Object.assign(PHOTO_CACHE,JSON.parse(localStorage.getItem("tabi-photos2")||"{}"))}catch(e){}
+function savePhotoCache(){try{localStorage.setItem("tabi-photos2",JSON.stringify(PHOTO_CACHE))}catch(e){}}
+const WP_SIZE=960; /* taille standard servie par Wikimedia */
+async function wpQuery(lang,params){const u=`https://${lang}.wikipedia.org/w/api.php?action=query&format=json&origin=*&redirects=1&prop=pageimages|info&inprop=url&piprop=thumbnail&pithumbsize=${WP_SIZE}&${params}`;
+  const r=await fetch(u);if(!r.ok)return null;const j=await r.json();const pages=j.query&&j.query.pages?Object.values(j.query.pages):[];
+  const pg=pages.find(x=>x.thumbnail&&x.thumbnail.source);return pg?{src:pg.thumbnail.source,page:pg.fullurl}:null}
+const wikiThumb=(lang,title)=>wpQuery(lang,"titles="+encodeURIComponent(title));
+const wikiSearch=(lang,q)=>wpQuery(lang,"generator=search&gsrlimit=3&gsrsearch="+encodeURIComponent(q));
+async function photoFor(a){
+  const key=a.id+"|"+a.title;const c=PHOTO_CACHE[key];
+  if(c&&c.src)return c;if(c&&c.miss&&Date.now()-c.miss<2*864e5)return null;
+  let res=null;const g=GEO[a.id];const clean=a.title.replace(/\(.*?\)/g,"").trim();
+  try{if(g&&g[2])res=await wikiThumb("en",g[2]);
+      if(!res)res=await wikiSearch("fr",clean+" "+CITY[a.city].name);
+      if(!res)res=await wikiSearch("en",clean+" "+CITY[a.city].name);
+      if(!res)res=await wikiSearch("en",clean);}catch(e){return null}
+  PHOTO_CACHE[key]=res||{miss:Date.now()};savePhotoCache();return res}
+function photoFailed(a){PHOTO_CACHE[a.id+"|"+a.title]={miss:Date.now()};savePhotoCache()}
+async function fillPhoto(a){const box=document.getElementById("ph-"+a.id);if(!box)return;const r=await photoFor(a);const b2=document.getElementById("ph-"+a.id);if(!b2)return;
+  if(!r)return
+  const img=new Image();img.alt=a.title;img.referrerPolicy="no-referrer";img.onload=()=>{b2.innerHTML="";b2.appendChild(img);const c=document.createElement("a");c.className="credit";c.href=r.page||"#";c.target="_blank";c.rel="noopener";c.textContent="Photo : Wikipédia";b2.appendChild(c);b2.classList.add("ok")};img.onerror=()=>{photoFailed(a)};img.src=r.src}
+/* Géolocalisation des nouvelles envies (OpenStreetMap) */
+async function geocode(a){try{const q=encodeURIComponent(a.title.replace(/\(.*?\)/g,"")+", "+CITY[a.city].name+", Japan");const r=await fetch(`https://nominatim.openstreetmap.org/search?format=json&limit=1&accept-language=fr&q=${q}`);if(!r.ok)return null;const j=await r.json();return j[0]?[Number(j[0].lat),Number(j[0].lon)]:null}catch(e){return null}}
+function mapHtml2(list){
+  const cg=CITYGEO[city];const pts=[],far=[],none=[];
+  list.forEach(a=>{const g=geoOf(a);if(!g)none.push(a);else if(km(cg.c,g)>cg.r)far.push(a);else pts.push([a,g])});
+  const st=STATIONS[city]||[];
+  const all=pts.map(p=>p[1]).concat(st.map(x=>[x[1],x[2]]));const rv=RIVERS[city];
+  if(!all.length)all.push(cg.c);
+  let la0=Math.min(...all.map(p=>p[0])),la1=Math.max(...all.map(p=>p[0])),lo0=Math.min(...all.map(p=>p[1])),lo1=Math.max(...all.map(p=>p[1]));
+  const k=Math.cos(cg.c[0]*Math.PI/180);let w=(lo1-lo0)*k,h=la1-la0;const m=Math.max(w,h)*0.12+0.004;la0-=m;la1+=m;lo0-=m/k;lo1+=m/k;w=(lo1-lo0)*k;h=la1-la0;
+  const W=340,H=Math.max(220,Math.min(420,Math.round(W*h/w)));const sx=W/w,sy=H/h,sc=Math.min(sx,sy);
+  const X=lo=>((lo-lo0)*k*sc+(W-w*sc)/2),Y=la=>((la1-la)*sc+(H-h*sc)/2);
+  const grid=[1,2,3].map(i=>`<line x1="${W*i/4}" y1="0" x2="${W*i/4}" y2="${H}" class="mg"/><line x1="0" y1="${H*i/4}" x2="${W}" y2="${H*i/4}" class="mg"/>`).join("");
+  const river=rv?`<polyline points="${rv[1].map(q=>X(q[1])+","+Y(q[0])).join(" ")}" class="mr"/>`:"";
+  const sts=st.map(([n,la,lo])=>`<rect x="${X(lo)-4}" y="${Y(la)-4}" width="8" height="8" rx="2" class="ms"/><text x="${X(lo)+7}" y="${Y(la)+4}" class="mt">${esc(n)}</text>`).join("");
+  pts.sort((a,b)=>score(a[0])-score(b[0]));
+  const dots=pts.map(([a,g])=>{const n=list.indexOf(a)+1;const r=kept(a)?11:8;return `<g class="md" data-a="open" data-id="${a.id}" tabindex="0" role="button" aria-label="${esc(a.title)}"><circle cx="${X(g[1])}" cy="${Y(g[0])}" r="${r}" fill="${KINDCOL[a.kind||"act"]}" stroke="var(--paper)" stroke-width="2"/><text x="${X(g[1])}" y="${Y(g[0])+3.5}" class="mn">${n}</text></g>`}).join("");
+  return `<div class="card mapwrap2"><svg viewBox="0 0 ${W} ${H}" role="img" aria-label="Carte de ${CITY[city].name}"><defs><clipPath id="mclip"><rect width="${W}" height="${H}" rx="14"/></clipPath></defs><rect width="${W}" height="${H}" rx="14" class="mbg"/><g clip-path="url(#mclip)">${grid}${river}</g>${sts}${dots}</svg>
+   <div class="legend"><span><i style="background:var(--shu)"></i>À faire</span><span><i style="background:var(--osaka)"></i>Où manger</span><span><i style="background:var(--tokyo)"></i>Boutiques</span><span><i class="sq"></i>Gares</span>${rv?`<span><i class="rv"></i>Fleuve ${rv[0]}</span>`:""}<span>Gros point = retenue</span></div></div>
+   <div class="card" style="margin-top:10px">${list.map((a,i)=>{const g=geoOf(a);const out=!g?"sans position":far.includes(a)?"hors carte (excursion)":"";return `<div class="line" data-id="${a.id}"><div><b><span class="num" style="background:${KINDCOL[a.kind||"act"]}">${i+1}</span>${esc(a.title)}</b><small>${score(a)} pts${out?" · "+out:""}</small></div><button type="button" class="linkbtn" data-a="open" data-id="${a.id}">Voir</button></div>`}).join("")||'<div class="sub">Rien à afficher.</div>'}</div>`;
+}
 const newId=p=>p+Date.now().toString(36)+Math.random().toString(36).slice(2,6);
 
 /* ---------- data ---------- */
 function fail(e){const c=e&&(e.code==="permission-denied"?"invalid_argument":e.code);toast(c==="invalid_argument"?"Tu n'as pas les droits pour modifier":c==="quota_exceeded"?"Espace plein : supprime des éléments":"Échec de l'enregistrement, réessaie")}
 async function save(col,id,data){if(live){try{await db.collection(col).doc(id).set(data)}catch(e){fail(e)}}else{const arr=S[col];const i=arr.findIndex(a=>a.id===id);const r={id,...data};if(i>=0)arr[i]=r;else arr.push(r);refresh()}}
-async function patch(col,id,data){if(live){try{await db.collection(col).doc(id).update(data)}catch(e){fail(e)}}else{const a=S[col].find(x=>x.id===id);if(a)for(const k in data){const v=data[k];if(v&&typeof v==="object"&&!Array.isArray(v))a[k]={...(a[k]||{}),...v};else a[k]=v}refresh()}}
+function flat(o,pre,out){out=out||{};for(const k in o){const v=o[k],key=pre?pre+"."+k:k;if(v&&typeof v==="object"&&!Array.isArray(v)&&Object.keys(v).length)flat(v,key,out);else out[key]=v}return out}
+async function patch(col,id,data){if(live){try{await db.collection(col).doc(id).update(window.__flatUpdate?flat(data):data)}catch(e){fail(e)}}else{const a=S[col].find(x=>x.id===id);if(a)for(const k in data){const v=data[k];if(v&&typeof v==="object"&&!Array.isArray(v))a[k]={...(a[k]||{}),...v};else a[k]=v}refresh()}}
 async function remove(col,id){if(live){try{await db.collection(col).doc(id).delete()}catch(e){fail(e)}}else{S[col]=S[col].filter(a=>a.id!==id);refresh()}}
 async function saveDoc(path,data){if(live){try{await db.doc(path).set(data)}catch(e){fail(e)}}}
 
@@ -442,8 +620,11 @@ function render(){
   $("#meName").textContent=me?nm(me):"choisir";
   document.querySelectorAll("nav.tabs button").forEach(b=>b.setAttribute("aria-pressed",String(b.dataset.tab===tab)));
   $("#view").innerHTML=({home:vHome,acts:vActs,plan:vPlan,budget:vBudget,more:vMore}[tab]||vHome)();
+  document.body.classList.toggle("swmode",tab==="acts"&&actView==="swipe");
+  if(tab==="acts"&&actView==="swipe")initSwipe();
 }
 function refresh(){
+  if(dragging)return;
   const ae=document.activeElement;
   if(!(ae&&$("#view").contains(ae)&&/INPUT|TEXTAREA|SELECT/.test(ae.tagName)))render();
   if(openFiche&&$("#sheetRoot .sheet")&&!(ae&&$("#sheetRoot").contains(ae)&&/INPUT|TEXTAREA|SELECT/.test(ae.tagName))){const a=S.activities.find(x=>x.id===openFiche);if(a)fiche(a,true);else closeSheet()}
@@ -473,31 +654,33 @@ function vActs(){
   let list=S.activities.filter(a=>a.city===city&&(a.kind||"act")===kind);
   if(filter==="tovote")list=list.filter(a=>me&&!(a.votes||{})[me]);
   if(filter==="kept")list=list.filter(kept);
+  if(filter==="calm")list=list.filter(a=>{const c=crowdOf(a);return c&&c<=2});
   list.sort((a,b)=>score(b)-score(a)||(b.createdAt||0)-(a.createdAt||0));
   const c=CITY[city];
   const titles=new Set(S.activities.filter(a=>a.city===city).map(a=>a.title.toLowerCase()));
   const ideas=kind==="act"&&S.activities.filter(a=>a.city===city&&(a.kind||"act")==="act").length<5?(IDEAS[city]||[]).map((i,k)=>[i,k]).filter(([i])=>!titles.has(i[0].toLowerCase())):[];
   const n=k=>S.activities.filter(a=>a.city===city&&(a.kind||"act")===k).length;
   return `<div class="cities">${CITIES.map(x=>`<button type="button" class="cityb" style="--c:var(--${x.id})" data-a="city" data-id="${x.id}" aria-pressed="${x.id===city}"><span class="kj">${x.kj}</span><span class="nm">${x.name}</span></button>`).join("")}</div>
-  <div class="tabs2" role="group" aria-label="Catégorie">${["act","resto","shop"].map(k=>`<button type="button" data-a="kind" data-id="${k}" aria-pressed="${kind===k}">${KINDS[k].label} (${n(k)})</button>`).join("")}</div>
-  <div class="bar"><div class="pills" role="group" aria-label="Filtre">${[["all","Tout"],["tovote","À voter"],["kept","Retenues"]].map(([k,l])=>`<button type="button" data-a="filter" data-id="${k}" aria-pressed="${filter===k}">${l}</button>`).join("")}</div></div>
-  <div class="list">${list.length?list.map(actCard).join(""):`<div class="empty">${filter==="tovote"?"Tu as voté pour tout ici.":filter==="kept"?"Rien de retenu pour l'instant : il faut deux « J'adore » et aucun « Bof ».":"Rien encore à "+c.name+". Touche le bouton + pour ajouter, ou demande des idées ci-dessous."}</div>`}</div>
-  ${sampleFn?`<div class="ai"><div><b>Idées de Claude</b><div class="sub">${kind==="resto"?"Des adresses où manger":kind==="shop"?"Des boutiques":"Des activités"} à ${c.name} selon vos votes</div></div><button type="button" class="btn small" data-a="suggest">Proposer</button></div>`:""}
-  ${ideas.length?`<section class="block">${head("案","Classiques à "+c.name)}<div class="card">${ideas.map(([i,k])=>`<div class="line"><div><b>${esc(i[0])}</b><small>${esc(i[3])}</small></div><button type="button" class="btn ghost small" data-a="idea" data-id="${k}">Ajouter</button></div>`).join("")}</div></section>`:""}`;
+  <div class="tabs2" role="group" aria-label="Catégorie"${actView==="swipe"?" hidden":""}>${["act","resto","shop"].map(k=>`<button type="button" data-a="kind" data-id="${k}" aria-pressed="${kind===k}">${KINDS[k].label} (${n(k)})</button>`).join("")}</div>
+  <div class="bar"><div class="pills" role="group" aria-label="Affichage"><button type="button" data-a="actview" data-id="swipe" aria-pressed="${actView==="swipe"}">Swipe ♥</button><button type="button" data-a="actview" data-id="list" aria-pressed="${actView==="list"}">Liste</button><button type="button" data-a="actview" data-id="map" aria-pressed="${actView==="map"}">Carte</button></div><div class="pills" role="group" aria-label="Filtre"${actView==="swipe"?" hidden":""}>${[["all","Tout"],["tovote","À voter"],["kept","Retenues"],["calm","Loin des foules"]].map(([k,l])=>`<button type="button" data-a="filter" data-id="${k}" aria-pressed="${filter===k}">${l}</button>`).join("")}</div></div>
+  ${actView==="swipe"?swipeHtml():actView==="map"?mapHtml2(S.activities.filter(a=>a.city===city&&(filter!=="tovote"||(me&&!(a.votes||{})[me]))&&(filter!=="kept"||kept(a))).sort((a,b)=>score(b)-score(a))):`<div class="list">${list.length?list.map(actCard).join(""):`<div class="empty">${filter==="tovote"?"Tu as voté pour tout ici.":filter==="kept"?"Rien de retenu pour l'instant : il faut au moins 3 points (J'adore = 2, J'aime = 1) et aucun « Non ».":"Rien encore à "+c.name+". Touche le bouton + pour ajouter, ou demande des idées ci-dessous."}</div>`}</div>`}
+  ${(kind!=="shop"&&!(actView==="swipe"))?`<div class="ai"><div><b>Carnet d'idées · ${c.name}</b><div class="sub">${kind==="resto"?"Restos, marchés et douceurs":"Activités et visites"} pas encore dans votre liste (${bankPool().length})</div></div><button type="button" class="btn small" data-a="bank">Proposer</button></div>`:""}
+  ${sampleFn&&actView!=="swipe"?`<div class="ai"><div><b>Idées de Claude</b><div class="sub">${kind==="resto"?"Des adresses où manger":kind==="shop"?"Des boutiques":"Des activités"} à ${c.name} selon vos votes</div></div><button type="button" class="btn small" data-a="suggest">Proposer</button></div>`:""}`;
+
 }
 function actCard(a){
   const v=a.votes||{};const mine=me?v[me]||"":"";const sc=score(a);
-  const vl={up:"♥",meh:"~",down:"×"};
+  const vl={up:"★",meh:"♥",down:"✕"};
   const others=PEOPLE.filter(p=>p!==me);
   const ncm=S.comments.filter(c=>c.act===a.id).length;
   return `<article class="card act${kept(a)?" kept":""}" data-id="${a.id}">
    <button type="button" class="title" data-a="open"><h3>${esc(a.title)}</h3>
-    <div class="meta">${unanimous(a)?'<span class="chip ok">Unanime</span>':kept(a)?'<span class="chip ok">Retenue</span>':""}${a.type?`<span class="chip">${esc(a.type)}</span>`:""}${durLabel(a)?`<span class="chip">${esc(durLabel(a))}</span>`:""}${a.priceYen?`<span class="chip">${yen(a.priceYen)}</span>`:""}${a.day?`<span class="chip ok">${fmtShort(a.day)}</span>`:""}${a.booking==="todo"?'<span class="chip todo">À réserver</span>':""}${ncm?`<span class="chip">${ncm} message${ncm>1?"s":""}</span>`:""}</div></button>
+    <div class="meta">${crowdHtml(crowdOf(a))}${unanimous(a)?'<span class="chip ok">Unanime</span>':kept(a)?'<span class="chip ok">Retenue</span>':""}${a.type?`<span class="chip">${esc(a.type)}</span>`:""}${durLabel(a)?`<span class="chip">${esc(durLabel(a))}</span>`:""}${a.priceYen?`<span class="chip">${yen(a.priceYen)}</span>`:""}${a.day?`<span class="chip ok">${fmtShort(a.day)}</span>`:""}${a.booking==="todo"?'<span class="chip todo">À réserver</span>':""}${ncm?`<span class="chip">${ncm} message${ncm>1?"s":""}</span>`:""}</div></button>
    <div class="stamp${sc===0?" zero":""}" title="Score">${sc>0?"+":""}${sc}<small>点</small></div>
    <div class="vote" role="group" aria-label="Mon vote">
-    <button type="button" class="up" data-a="vote" data-v="up" aria-pressed="${mine==="up"}"><i>♥</i>J'adore</button>
-    <button type="button" class="meh" data-a="vote" data-v="meh" aria-pressed="${mine==="meh"}"><i>~</i>Pourquoi pas</button>
-    <button type="button" class="down" data-a="vote" data-v="down" aria-pressed="${mine==="down"}"><i>×</i>Bof</button></div>
+    <button type="button" class="down" data-a="vote" data-v="down" aria-pressed="${mine==="down"}"><i>✕</i>Non</button>
+    <button type="button" class="meh" data-a="vote" data-v="meh" aria-pressed="${mine==="meh"}"><i>♥</i>J'aime</button>
+    <button type="button" class="up" data-a="vote" data-v="up" aria-pressed="${mine==="up"}"><i>★</i>J'adore</button></div>
    ${me?`<div class="others">${others.map(p=>`<span>${esc(nm(p))} <b class="${v[p]||""}">${v[p]?vl[v[p]]:"·"}</b></span>`).join("")}</div>`:""}
   </article>`;
 }
@@ -615,12 +798,14 @@ function fabMenu(){
   const c=[["addact","Une envie","Temple, quartier, expérience…"],["addresto","Un restaurant","Une adresse où manger"],["addshop","Une boutique","Souvenirs, manga, couteaux…"],["addexp","Une dépense","Sur place, qui a payé quoi"],["addck","Une tâche avant le départ","Ex. réserver l'hôtel"],["addtr","Un trajet","Vol, Shinkansen…"],["addho","Un hôtel","Avec les dates"]];
   const adm=["addck","addtr","addho"];sheet(`<h2>Ajouter</h2><div class="choice">${c.filter(x=>isAdmin||!adm.includes(x[0])).map(([a,t,d])=>`<button type="button" data-a="${a}"><b>${t}</b><span class="sub">${d}</span></button>`).join("")}</div>`)}
 function fiche(a,keep){
-  const v=a.votes||{};const vl={up:"J'adore",meh:"Pourquoi pas",down:"Bof"};
+  const v=a.votes||{};const vl={up:"J'adore",meh:"J'aime",down:"Non"};
   const maps="https://www.google.com/maps/search/?api=1&query="+encodeURIComponent(a.title+" "+CITY[a.city].name+" Japan");
   const cms=S.comments.filter(c=>c.act===a.id).sort((x,y)=>(x.at||0)-(y.at||0));const ph=S.photos.filter(p=>p.act===a.id);
   const box=$("#sheetRoot .sheet>div");const scroll=keep&&box?box.scrollTop:0;
-  sheet(`<div><span class="chip city" style="--c:var(--${a.city})">${CITY[a.city].kj} ${CITY[a.city].name}</span></div><h2>${esc(a.title)}</h2>
+  const geo=geoOf(a);
+  sheet(`<div class="ph" id="ph-${a.id}" aria-hidden="true">${illuHtml(a)}</div><div><span class="chip city" style="--c:var(--${a.city})">${CITY[a.city].kj} ${CITY[a.city].name}</span></div><h2>${esc(a.title)}</h2>
    <div class="meta">${a.type?`<span class="chip">${esc(a.type)}</span>`:""}${durLabel(a)?`<span class="chip">${esc(durLabel(a))}</span>`:""}${a.priceYen?`<span class="chip">${yen(a.priceYen)} / pers.</span>`:""}${a.booking==="todo"?`<span class="chip todo">À réserver${a.bookBy?" avant le "+fmtShort(a.bookBy):""}</span>`:a.booking==="done"?'<span class="chip ok">Réservé</span>':""}</div>
+   <div class="crowdset"><span class="sub">Fréquentation · touche pour noter</span><div class="crowdbtns" role="group" aria-label="Fréquentation touristique">${[1,2,3,4].map(i=>{const lv=crowdOf(a);return `<button type="button" data-a="setcrowd" data-id="${a.id}" data-v="${i}" aria-label="${CROWD_TXT[i]}" aria-pressed="${lv===i}"><svg viewBox="0 0 24 24" fill="${i<=lv?CROWD_COL[lv]:"var(--line)"}">${PERSON}</svg></button>`}).join("")}<b style="color:${CROWD_COL[crowdOf(a)]||"var(--muted)"}">${CROWD_TXT[crowdOf(a)]}</b></div></div>
    ${a.notes?`<p style="margin:0">${esc(a.notes)}</p>`:""}
    <div class="sub">${PEOPLE.map(p=>`${esc(nm(p))} : <b>${v[p]?vl[v[p]]:"pas voté"}</b>`).join(" · ")}</div>
    <div class="links">${a.link?`<a href="${esc(a.link)}" target="_blank" rel="noopener">Site</a>`:""}<a href="${maps}" target="_blank" rel="noopener">Google Maps</a></div>
@@ -629,6 +814,8 @@ function fiche(a,keep){
     <form class="cmform" data-act="${a.id}"><input id="cmInput" name="t" placeholder="Ton avis…" autocomplete="off"><button class="btn small" type="submit">Envoyer</button></form></div>
    <div class="foot">${canEdit(a)?`<button type="button" class="linkbtn danger" data-a="del" data-k="activities" data-id="${a.id}">Supprimer</button>`:"<span></span>"}<div class="links">${canEdit(a)?`<button type="button" class="btn ghost" data-a="editact" data-id="${a.id}">Modifier</button>`:""}<button type="button" class="btn" data-a="close">Fermer</button></div></div>`);
   openFiche=a.id;const nb=$("#sheetRoot .sheet>div");if(scroll&&nb)nb.scrollTop=scroll;
+  fillPhoto(a);
+  if(!geo&&!GEO[a.id]&&!a.geoTried){geocode(a).then(g=>{patch("activities",a.id,g?{lat:g[0],lng:g[1],geoTried:true}:{geoTried:true})})}
 }
 function actForm(a,k){
   a=a||{city,kind:k||kind,title:"",type:"",hours:"",priceYen:"",link:"",notes:"",booking:"",bookBy:""};const isR=(a.kind||"act")==="resto",isS=a.kind==="shop";
@@ -636,6 +823,7 @@ function actForm(a,k){
    <label for="fTitle">Nom<input id="fTitle" name="title" required value="${esc(a.title)}" placeholder="${isR?"Ex. Ichiran Dōtonbori":isS?"Ex. Don Quijote Dōtonbori":"Ex. Fushimi Inari-taisha"}"></label>
    <div class="grid2"><label for="fCity">Ville<select id="fCity" name="city">${opts(CITIES.map(c=>[c.id,c.name]),a.city)}</select></label><label for="fType">${isR?"Spécialité":"Type"}<select id="fType" name="type"><option value="">—</option>${opts(typesOf(a.kind||"act").map(t=>[t,t]),a.type)}</select></label></div>
    <div class="grid2"><label for="fDur">Durée<select id="fDur" name="hours"><option value="">—</option>${opts(DURS,a.hours)}</select></label><label for="fPrice">Prix par personne (¥)<input id="fPrice" name="priceYen" type="number" min="0" step="100" inputmode="numeric" value="${a.priceYen??""}"></label></div>
+   <label for="fCrowd">Fréquentation touristique<select id="fCrowd" name="crowd">${opts([["","Je ne sais pas encore"],["1","1 · Peu touristique"],["2","2 · Un peu touristique"],["3","3 · Très touristique"],["4","4 · Extrêmement touristique"]],a.id?(crowdOf(a)||""):"")}</select></label>
    <details${a.link||a.notes||a.booking?" open":""}><summary class="sub" style="cursor:pointer">Plus de détails (lien, notes, réservation)</summary><div class="stack" style="margin-top:10px">
    <label for="fLink">Lien<input id="fLink" name="link" type="url" value="${esc(a.link)}" placeholder="https://…"></label>
    <label for="fNotes">Notes<textarea id="fNotes" name="notes">${esc(a.notes)}</textarea></label>
@@ -687,7 +875,7 @@ async function suggest(){
 Ils ont aimé : ${liked.join(" ; ")||"pas encore de votes"}. Ils n'aiment pas : ${disliked.join(" ; ")||"rien"}.
 Déjà dans leur liste (ne pas reproposer) : ${mine.join(" ; ")||"rien"}.
 Propose 6 ${isR?"adresses où manger (lieux réels et connus, ou un type d'adresse précis dans un quartier précis)":isS?"boutiques ou rues commerçantes réelles et connues (souvenirs, artisanat, mode, manga, couteaux, papeterie…)":"activités variées et réelles"} à ${c.name}, adaptées à leurs goûts et à début mars.
-Réponds uniquement avec un tableau JSON en français : [{"title":"nom","type":"un de : ${types.join(" | ")}","hours":1|2|3|4|8,"priceYen":prix approximatif par personne en yens (0 si gratuit),"notes":"une phrase : pourquoi et un conseil pratique"}]`;
+Réponds uniquement avec un tableau JSON en français : [{"title":"nom","type":"un de : ${types.join(" | ")}","hours":1|2|3|4|8,"priceYen":prix approximatif par personne en yens (0 si gratuit),"notes":"une phrase : pourquoi et un conseil pratique","crowd":fréquentation touristique de 1 (peu touristique) à 4 (extrêmement touristique)}]`;
   try{const r=await sampleFn.json(prompt,{modelTier:"default"});const arr=Array.isArray(r)?r:(r&&Array.isArray(r.items)?r.items:[]);window.__sug={list:arr,kind:k0,city:c0};
     const out=$("#sugOut");if(!out)return;out.className="";
     out.innerHTML=arr.length?arr.map((x,i)=>`<div class="line"><div><b>${esc(x.title)}</b><small>${esc(x.type||"")}${x.priceYen?" · ≈ "+yen(x.priceYen):""}</small><small>${esc(x.notes||"")}</small></div><button type="button" class="btn ghost small" data-a="addsug" data-id="${i}">Ajouter</button></div>`).join("")+`<p class="sub">Suggestions à vérifier (horaires, prix).</p>`:"Pas de suggestion cette fois, réessaie.";
@@ -707,7 +895,7 @@ function exportMd(){
   return `# Japon 2027\n\n${PEOPLE.map(nm).join(", ")} · exporté le ${new Date().toLocaleDateString("fr-FR")}\n\n`+DAYS.map(dayData).map(d=>`## ${fmt(d.iso)} · ${d.city}\n\n${d.trs.map(t=>`- 🚄 ${PLACE[t.from]||t.from} → ${PLACE[t.to]||t.to} ${t.mode||""} ${t.time||""}`).join("\n")}${d.trs.length?"\n":""}${d.ho?`- ⌂ ${d.ho.name}\n`:""}${d.slots.filter(s=>s[1].length).map(([l,it])=>`\n**${l}**\n\n${it.map(a=>`- ${a.link?`[${a.title}](${a.link})`:a.title}${a.notes?" — "+a.notes:""}`).join("\n")}`).join("\n")}\n`).join("\n")}
 function exportCsv(){const q=v=>'"'+String(v??"").replace(/"/g,'""')+'"';
   const hd=["Ville","Catégorie","Nom","Type","Durée","Prix ¥","Score",...PEOPLE.map(nm),"Jour","Moment","Réservation","Lien","Notes"];
-  const rows=S.activities.map(a=>[CITY[a.city].name,a.kind==="resto"?"Restaurant":a.kind==="shop"?"Boutique":"À faire",a.title,a.type,durLabel(a),a.priceYen,score(a),...PEOPLE.map(p=>({up:"J'adore",meh:"Pourquoi pas",down:"Bof"})[(a.votes||{})[p]]||""),a.day,a.day?(SLOTS.find(s=>s[0]===a.slot)||SLOTS[0])[1]:"",a.booking==="todo"?"À réserver":a.booking==="done"?"Réservé":"",a.link,a.notes]);
+  const rows=S.activities.map(a=>[CITY[a.city].name,a.kind==="resto"?"Restaurant":a.kind==="shop"?"Boutique":"À faire",a.title,a.type,durLabel(a),a.priceYen,score(a),...PEOPLE.map(p=>({up:"J'adore",meh:"J'aime",down:"Non"})[(a.votes||{})[p]]||""),a.day,a.day?(SLOTS.find(s=>s[0]===a.slot)||SLOTS[0])[1]:"",a.booking==="todo"?"À réserver":a.booking==="done"?"Réservé":"",a.link,a.notes]);
   return "﻿"+[hd,...rows].map(r=>r.map(q).join(";")).join("\r\n")}
 function exportJson(){const data={app:"japon-2027",version:1,exportedAt:new Date().toISOString(),settings,notes};COLS.forEach(c=>data[c]=S[c]);return JSON.stringify(data,null,2)}
 async function doExport(k){if(!downloads)return;
@@ -720,6 +908,185 @@ async function doImport(file){
     if(typeof d.notes==="string"){notes=d.notes;await saveDoc("trip/notes",{text:notes})}
     toast(n+" éléments importés");render()}catch(e){toast("Import impossible : fichier illisible")}}
 
+
+/* ---------- vote façon Tinder ---------- */
+let swHist=[],frontId=null,dragging=false;
+/* « Plus tard » : fiches passées, gardées sur l'appareil pour chaque voyageur, remises en fin de pile */
+function passedMap(){try{return JSON.parse(localStorage.getItem("tabi-passed-"+me)||"{}")}catch(e){return passedMap.mem||(passedMap.mem={})}}
+function setPassed(m){passedMap.mem=m;try{localStorage.setItem("tabi-passed-"+me,JSON.stringify(m))}catch(e){}}
+function markPassed(id,on){const m=passedMap();if(on)m[id]=Date.now();else delete m[id];setPassed(m)}
+function deck(){const P=passedMap();return S.activities.filter(a=>a.city===city&&me&&(!(a.votes||{})[me]||a.id===frontId)).sort((a,b)=>(b.id===frontId)-(a.id===frontId)||((P[a.id]||0)-(P[b.id]||0))||(a.createdAt||0)-(b.createdAt||0))}
+function swUndo(){const h=swHist.pop();if(!h||!me)return;const a=S.activities.find(x=>x.id===h.id);if(!a){render();return}
+  if(h.type==="skip"){const m=passedMap();if(h.prevPass)m[h.id]=h.prevPass;else delete m[h.id];setPassed(m)}else patch("activities",h.id,{votes:{[me]:h.prev}});
+  frontId=h.id;if(a.city!==city){city=a.city;try{localStorage.setItem("tabi-city",city)}catch(_){}}
+  setTimeout(()=>{render();const c=document.querySelector(".sw.top");if(c){c.classList.add("back")}},60);toast("Retour à « "+a.title+" »")}
+function swipeCard(a,top){
+  const v=a.votes||{};const n=PEOPLE.filter(p=>v[p]).length;const k=KINDS[a.kind||"act"];
+  return `<div class="sw${top?" top":""}" data-id="${a.id}" style="--c:var(--${a.city})">
+   <div class="swph" id="sph-${a.id}">${illuHtml(a)}</div>
+   <div class="swstamp like">J'AIME</div><div class="swstamp nope">NON</div><div class="swstamp love">J'ADORE</div><div class="swstamp later">PLUS TARD</div>${passedMap()[a.id]?'<div class="swagain">Passée · à revoir</div>':""}
+   <div class="swbody"><div class="meta">${crowdHtml(crowdOf(a))}<span class="chip">${k.label}</span>${a.type?`<span class="chip">${esc(a.type)}</span>`:""}${durLabel(a)?`<span class="chip">${esc(durLabel(a))}</span>`:""}${a.priceYen?`<span class="chip">${yen(a.priceYen)}</span>`:""}</div>
+    <h3>${esc(a.title)}</h3>${a.notes?`<p>${esc(a.notes)}</p>`:""}<div class="sub">${n?n+" vote"+(n>1?"s":"")+" déjà · ":""}Touche la carte pour les détails</div></div></div>`}
+function swipeHtml(){
+  if(!me)return `<div class="empty">Choisis d'abord qui tu es.<div style="margin-top:10px"><button type="button" class="btn small" data-a="pickme">Je suis…</button></div></div>`;
+  const d=deck();
+  if(!d.length){const rest=CITIES.filter(c=>c.id!==city).map(c=>[c,S.activities.filter(a=>a.city===c.id&&!(a.votes||{})[me]).length]).filter(x=>x[1]);
+    return `<div class="empty swdone"><div class="big">🎉</div><b>Tu as voté pour tout à ${CITY[city].name}.</b>
+     ${rest.length?`<div class="sub">Il en reste ailleurs :</div><div class="pills" style="justify-content:center">${rest.map(([c,n])=>`<button type="button" data-a="city" data-id="${c.id}">${c.name} · ${n}</button>`).join("")}</div>`:`<div class="sub">Plus rien à voter nulle part. Bravo !</div>`}
+     ${swHist.length?`<button type="button" class="btn ghost small" data-a="swundo">↶ Revenir en arrière</button>`:""}</div>`}
+  const np=d.filter(a=>passedMap()[a.id]).length;
+  return `<div class="swcount sub">${d.length} à voter à ${CITY[city].name}${np?` · dont ${np} passée${np>1?"s":""} pour plus tard`:""}</div>
+  <div class="swdeck" id="swdeck">${d.slice(0,2).reverse().map((a,i,arr)=>swipeCard(a,i===arr.length-1)).join("")}</div>
+  <div class="swbtns"><button type="button" class="swb undo" data-a="swundo" aria-label="Revenir à la fiche précédente"${swHist.length?"":" disabled"}>↶${swHist.length?`<span class="swn">${swHist.length}</span>`:""}</button>
+   <button type="button" class="swb nope" data-a="swvote" data-v="down" aria-label="Non">✕</button>
+   <button type="button" class="swb love" data-a="swvote" data-v="up" aria-label="J'adore">★</button>
+   <button type="button" class="swb like" data-a="swvote" data-v="meh" aria-label="J'aime">♥</button>
+   <button type="button" class="swb skip" data-a="swskip" aria-label="Plus tard">⤵</button></div>
+  <div class="swhelp sub">← Non · ↑ J'adore · → J'aime · ↓ plus tard · ↶ revenir en arrière</div>`}
+function passSwipe(el){const card=el||document.querySelector(".sw.top");if(!card)return;const id=card.dataset.id;
+  if(deck().length<2){toast("C'est la dernière fiche : vote quand tu veux");card.style.transition="transform .25s";card.style.transform="";dragging=false;return}
+  swHist.push({id,type:"skip",prevPass:passedMap()[id]||0});markPassed(id,true);frontId=null;
+  card.style.transition="transform .3s ease, opacity .3s";card.style.transform="translateY(600px) scale(.8)";card.style.opacity="0";
+  toast("Passée : elle reviendra à la fin");setTimeout(()=>{dragging=false;render()},260)}
+function castSwipe(v,el){
+  const card=el||document.querySelector(".sw.top");if(!card)return;const a=S.activities.find(x=>x.id===card.dataset.id);if(!a)return;
+  const dx=v==="down"?-1:v==="meh"?1:0,dy=v==="up"?-1:0;
+  card.style.transition="transform .3s ease, opacity .3s";card.style.transform=`translate(${dx*500}px,${dy*700}px) rotate(${dx*25}deg)`;card.style.opacity="0";
+  swHist.push({id:a.id,type:"vote",prev:(a.votes||{})[me]||""});frontId=null;markPassed(a.id,false);
+  setTimeout(()=>{patch("activities",a.id,{votes:{[me]:v}});dragging=false;render()},260)}
+function initSwipe(){
+  const card=document.querySelector(".sw.top");if(!card)return;
+  const a=S.activities.find(x=>x.id===card.dataset.id);
+  document.querySelectorAll(".sw").forEach(el=>{const x=S.activities.find(y=>y.id===el.dataset.id);if(x)swPhoto(x)});
+  let sx=0,sy=0,dx=0,dy=0,down=false;
+  const st=n=>card.querySelector(".swstamp."+n);
+  card.addEventListener("pointerdown",e=>{down=true;dragging=true;sx=e.clientX;sy=e.clientY;dx=dy=0;card.setPointerCapture(e.pointerId);card.style.transition="none"});
+  card.addEventListener("pointermove",e=>{if(!down)return;dx=e.clientX-sx;dy=e.clientY-sy;card.style.transform=`translate(${dx}px,${dy}px) rotate(${dx/18}deg)`;
+    st("like").style.opacity=Math.max(0,Math.min(1,dx/90));st("nope").style.opacity=Math.max(0,Math.min(1,-dx/90));st("love").style.opacity=Math.max(0,Math.min(1,(-dy-Math.abs(dx))/90));st("later").style.opacity=Math.max(0,Math.min(1,(dy-Math.abs(dx))/90))});
+  const end=()=>{if(!down)return;down=false;
+    if(Math.abs(dx)<6&&Math.abs(dy)<6){dragging=false;card.style.transform="";if(a)fiche(a);return}
+    if(-dy>110&&-dy>Math.abs(dx))return castSwipe("up",card);
+    if(dy>110&&dy>Math.abs(dx))return passSwipe(card);
+    if(dx>100)return castSwipe("meh",card);
+    if(dx<-100)return castSwipe("down",card);
+    card.style.transition="transform .25s ease";card.style.transform="";["like","nope","love","later"].forEach(n=>st(n).style.opacity=0);dragging=false};
+  card.addEventListener("pointerup",end);card.addEventListener("pointercancel",end);
+}
+async function swPhoto(a){const box=document.getElementById("sph-"+a.id);if(!box||box.dataset.done)return;box.dataset.done="1";
+  const r=await photoFor(a);const b=document.getElementById("sph-"+a.id);if(!r||!b)return;
+  const img=new Image();img.alt="";img.draggable=false;img.referrerPolicy="no-referrer";img.onload=()=>{b.appendChild(img);b.classList.add("ok")};img.onerror=()=>photoFailed(a);img.src=r.src}
+document.addEventListener("keydown",e=>{if(tab!=="acts"||actView!=="swipe"||$("#sheetRoot .sheet")||/INPUT|TEXTAREA|SELECT/.test((document.activeElement||{}).tagName||""))return;
+  if(e.key==="Backspace"||((e.ctrlKey||e.metaKey)&&e.key==="z")){e.preventDefault();swUndo()}else if(e.key==="ArrowLeft")castSwipe("down");else if(e.key==="ArrowRight")castSwipe("meh");else if(e.key==="ArrowUp"){e.preventDefault();castSwipe("up")}else if(e.key==="ArrowDown"){e.preventDefault();passSwipe()}});
+/* Carnet d'idées intégré : [titre, type, durée (h), prix ¥ approx. ou "", note] — à vérifier avant le départ */
+const BANK={
+ osaka:{
+  act:[
+   ["Sumiyoshi Taisha","Temple / sanctuaire",2,0,"Un des plus anciens sanctuaires du Japon, célèbre pont rouge en arc. Calme, peu de touristes.",2],
+   ["Shitennō-ji","Temple / sanctuaire",2,300,"Premier temple bouddhiste d'État du Japon, pagode à cinq étages, près de Tennōji.",2],
+   ["Abeno Harukas 300","Quartier / balade",2,2000,"Observatoire au 60e étage de la plus haute tour d'Osaka, superbe au coucher du soleil.",2],
+   ["Namba Yasaka-jinja","Temple / sanctuaire",1,0,"Sanctuaire avec une énorme tête de lion qui « avale » le malheur. Photo garantie.",3],
+   ["Hōzen-ji Yokochō","Quartier / balade",1,0,"Ruelle pavée cachée près de Dōtonbori, statue Fudō recouverte de mousse qu'on arrose d'eau.",3],
+   ["Parc de l'Expo '70 et Tour du Soleil","Nature / jardin",3,"","Immense parc au nord de la ville, la Tour du Soleil se visite de l'intérieur (réserver).",1],
+   ["Musée des nouilles instantanées Cup Noodles (Ikeda)","Musée",2,500,"Crée ta propre tasse de nouilles personnalisée. Ludique, à 20 min de Umeda.",3],
+   ["Musée de l'habitat d'Osaka","Musée",2,600,"Reconstitution grandeur nature d'un quartier de l'époque Edo, location de kimono possible.",3],
+   ["Parc de Minoo et sa cascade","Nature / jardin",4,0,"Balade en forêt jusqu'à une cascade de 33 m, à goûter : les feuilles d'érable frites.",1],
+   ["Grande roue de Tempozan","Quartier / balade",1,900,"Juste à côté de l'aquarium Kaiyūkan, vue sur la baie d'Osaka.",2],
+   ["Excursion au château de Himeji","Excursion à la journée",6,1000,"Le plus beau château original du Japon, à environ 1 h en train depuis Osaka.",4],
+   ["Excursion à Kobe","Excursion à la journée",6,"","Quartier Kitano, port, et un vrai bœuf de Kobe au déjeuner. 30 min en train.",3],
+   ["Nakanoshima et musée d'art oriental","Musée",2,"","Île au cœur de la ville, belle architecture et collection de céramiques asiatiques.",1]],
+  resto:[
+   ["Gyoza et butaman 551 Hōrai","Street food",1,"","Les brioches au porc vapeur les plus célèbres d'Osaka, à Namba. Parfait en en-cas.",3],
+   ["Cheesecake Rikurō Ojisan","Café / dessert",1,"","Cheesecake japonais tout tremblotant, sortie du four à la cloche, à Namba.",3],
+   ["Kushikatsu Daruma","Street food",1,"","L'adresse historique des brochettes panées à Shinsekai. Ne trempe qu'une fois dans la sauce !",4],
+   ["Kani Dōraku Dōtonbori","Autre",2,"","Le restaurant au crabe géant animé, spécialiste du crabe sous toutes ses formes.",4],
+   ["Ura-Namba, ruelles d'izakaya","Izakaya",2,"","Petits bars et comptoirs serrés derrière Namba, ambiance locale le soir.",2],
+   ["Tenjinbashi-suji Shōtengai","Street food",2,"","La plus longue rue commerçante couverte du Japon (2,6 km), snacks à chaque coin.",1],
+   ["Okonomiyaki Fukutarō","Okonomiyaki",1,"","Okonomiyaki et negiyaki réputés à Sennichimae, file d'attente fréquente.",3],
+   ["Kitsune udon chez Dōtonbori Imai","Udon / soba",1,"","Maison historique, inventeur présumé du kitsune udon au tofu frit sucré.",2],
+   ["Tsuruhashi, quartier coréen et yakiniku","Wagyu / yakiniku",2,"","Ruelles enfumées de barbecue coréen et marché de kimchi, très authentique.",1],
+   ["Food hall du grand magasin Hankyū Umeda","Street food",1,"","Le « depachika » : un sous-sol entier de gourmandises, bentos et pâtisseries.",2],
+   ["Sushi Harukoma (Tenma)","Sushi",1,"","Sushis généreux et pas chers, adoré des locaux. Arriver tôt.",2]]},
+ hiroshima:{
+  act:[
+   ["Tour Orizuru","Quartier / balade",1,2200,"Terrasse en bois au sommet avec vue sur le Dôme de Genbaku, on y plie des grues en papier.",2],
+   ["Mitaki-dera","Temple / sanctuaire",2,0,"Temple en forêt avec trois cascades et des statues couvertes de mousse, très paisible.",1],
+   ["Téléphérique et mont Misen (Miyajima)","Nature / jardin",3,2000,"Le sommet de l'île : vue sur la mer intérieure, daims et singes sauvages.",3],
+   ["Daishō-in (Miyajima)","Temple / sanctuaire",1,0,"Temple au pied du mont Misen, escaliers à moulins à prières et centaines de statues.",2],
+   ["Excursion à Onomichi","Excursion à la journée",6,"","Ville de collines et de temples, chemin des chats, vue sur la mer. 1 h 15 en train.",2],
+   ["Musée Yamato de Kure","Musée",2,500,"Musée naval avec une maquette géante du cuirassé Yamato, à 35 min en train.",2],
+   ["Musée d'art d'Hiroshima","Musée",2,"","Belle collection d'impressionnistes français, dans le parc du château.",1],
+   ["Saijō, la ville du saké","Excursion à la journée",4,"","Rue de distilleries de saké en briques, dégustations gratuites. 35 min en train.",1]],
+  resto:[
+   ["Okonomiyaki Nagata-ya","Okonomiyaki",1,"","Une des adresses les plus aimées, à deux pas du parc de la Paix.",3],
+   ["Okonomiyaki Hassho","Okonomiyaki",1,"","Réputé pour ses okonomiyaki épais et généreux, souvent complet le soir.",2],
+   ["Tsukemen de Hiroshima (Bakudanya)","Ramen",1,"","Nouilles froides à tremper dans un bouillon pimenté, spécialité locale.",2],
+   ["Huîtres de Miyajima chez Kakiya","Autre",1,"","Huîtres grillées, frites ou crues, avec un verre de saké local.",3],
+   ["Anago-meshi Ueno (Miyajimaguchi)","Autre",1,"","Le riz au congre grillé le plus célèbre, depuis plus d'un siècle. Bentos à emporter.",3],
+   ["Momiji manjū frits (Momijidō)","Café / dessert",1,"","Les petits gâteaux en feuille d'érable, ici frits en beignet, sur la rue principale de Miyajima.",3]]},
+ kyoto:{
+  act:[
+   ["Kitano Tenman-gū et ses pruniers","Temple / sanctuaire",2,"","Début mars : pleine floraison des pruniers (ume). Parfait pour vos dates.",2],
+   ["Tōfuku-ji","Temple / sanctuaire",2,600,"Grand temple zen, pont Tsūten et jardins de pierres modernes.",2],
+   ["Sanjūsangen-dō","Temple / sanctuaire",1,600,"1 001 statues de Kannon dorées alignées dans un même hall, saisissant.",3],
+   ["Randonnée Kurama – Kibune","Nature / jardin",5,"","Sentier en forêt entre deux villages de montagne, temples et onsen à Kurama.",2],
+   ["Fushimi, quartier du saké","Quartier / balade",3,"","Canaux, entrepôts de saké et musée Gekkeikan avec dégustation, près de Fushimi Inari.",2],
+   ["Sanctuaire Heian","Temple / sanctuaire",2,"","Immense torii rouge et jardin à l'arrière (payant), près du musée d'art.",2],
+   ["Byōdō-in et Uji","Excursion à la journée",5,"","Le temple du billet de 10 yens, et la capitale du matcha. 20 à 30 min en train.",3],
+   ["Ōhara et Sanzen-in","Excursion à la journée",5,"","Village de montagne et temple aux jardins de mousse, à 1 h en bus.",1],
+   ["Balade en kimono à Higashiyama","Expérience",4,"","Location de kimono à la journée, idéal pour les ruelles autour de Kiyomizu.",4],
+   ["Daitoku-ji","Temple / sanctuaire",2,"","Ensemble de sous-temples zen, jardins secs parmi les plus beaux de Kyoto.",1],
+   ["Musée du chemin de fer de Kyoto","Musée",2,1500,"Locomotives à vapeur et Shinkansen d'époque, même pour les non-fans.",2],
+   ["Aqueduc de Nanzen-ji","Quartier / balade",1,0,"Arches en briques du XIXᵉ siècle dans l'enceinte du temple, très photogénique.",3]],
+  resto:[
+   ["Demachi Futaba (mame-daifuku)","Café / dessert",1,"","Mochi aux haricots, file d'attente culte. Vendu jusqu'à épuisement.",3],
+   ["Omen (udon, près du Ginkaku-ji)","Udon / soba",1,"","Udon à tremper avec légumes de saison, à la fin du chemin de la philosophie.",2],
+   ["Rue des ramen d'Ichijōji","Ramen",1,"","Le quartier des étudiants : une dizaine d'échoppes de ramen très réputées.",1],
+   ["Kyoto Ramen Kōji (gare de Kyoto)","Ramen",1,"","8 ramen de tout le Japon au 10e étage de la gare, pratique avant un train.",3],
+   ["Nakamura Tōkichi","Café / dessert",1,"","Maison de thé historique d'Uji : parfaits au matcha et gelée de thé.",3],
+   ["Obanzai, la cuisine familiale de Kyoto","Kaiseki",2,"","Petits plats de légumes de saison servis au comptoir, autour de Nishiki ou Pontochō.",2],
+   ["Dégustation de saké à Fushimi","Autre",1,"","Bars de brasseries (Fushimi Sakagura Kōji) pour goûter plusieurs sakés locaux.",2],
+   ["Gyōza Chao Chao (Sanjō)","Street food",1,"","Gyōza croustillants primés, petite salle animée. Arriver à l'ouverture.",3],
+   ["% Arabica Arashiyama","Café / dessert",1,"","Le café au bord de la rivière Katsura, parfait pause pendant Arashiyama.",4]]},
+ tokyo:{
+  act:[
+   ["Musée Ghibli (Mitaka)","Musée",3,1000,"Billets mis en vente le 10 du mois précédent et vite épuisés : à réserver le 10 février.",3],
+   ["Yanaka Ginza et le vieux Tokyo","Quartier / balade",3,0,"Quartier épargné par la guerre : temples, chats, petites boutiques et snacks.",2],
+   ["Jardins est du palais impérial","Nature / jardin",2,0,"Gratuits, au cœur de Tokyo. Fermés le lundi et le vendredi.",2],
+   ["Odaiba et le Gundam géant","Quartier / balade",3,0,"Île artificielle, statue de robot grandeur nature, vue sur le Rainbow Bridge.",3],
+   ["Roppongi Hills, Mori Art Museum et Tokyo City View","Musée",3,2000,"Art contemporain et vue panoramique à 360° au 52e étage.",2],
+   ["Gōtoku-ji, le temple des maneki-neko","Temple / sanctuaire",1,0,"Des centaines de chats porte-bonheur blancs, à Setagaya.",2],
+   ["Excursion à Kamakura","Excursion à la journée",7,"","Grand Bouddha, temples en forêt et plage, à 1 h de Tokyo.",4],
+   ["Tokyo DisneySea","Expérience",10,"","Le parc Disney unique au monde, souvent cité comme le plus beau. Billets datés.",4],
+   ["Nakano Broadway","Marché / shopping",2,"","Galerie des collectionneurs : manga, figurines et jouets vintage.",2],
+   ["Nezu-jinja","Temple / sanctuaire",1,0,"Tunnel de torii rouges comme à Kyoto, sans la foule, près de Yanaka.",1],
+   ["Canal de Naka-Meguro","Quartier / balade",2,0,"Canal bordé de cafés. Si les cerisiers sont précoces, c'est l'un des plus beaux spots.",2],
+   ["Marché de Toyosu","Marché / shopping",3,0,"Le nouveau marché aux poissons, galerie pour voir la criée au thon tôt le matin.",2],
+   ["Harajuku Omotesandō et Cat Street","Quartier / balade",2,0,"Architecture moderne, boutiques de créateurs et ruelles tendance.",3]],
+  resto:[
+   ["Tokyo Ramen Street (gare de Tokyo)","Ramen",1,"","Huit maisons de ramen réputées dans le sous-sol de la gare.",3],
+   ["Afuri (ramen au yuzu)","Ramen",1,"","Bouillon léger parfumé au yuzu, plusieurs adresses dont Harajuku et Ebisu.",3],
+   ["Ichiran Shibuya","Ramen",1,"","Ramen tonkotsu servis en box individuel, ouvert 24 h/24.",4],
+   ["Tonkatsu Maisen Aoyama","Autre",1,"","Le tonkatsu de référence, dans un ancien bain public.",3],
+   ["Uogashi Nihon-Ichi (sushi debout)","Sushi",1,"","Bar à sushis debout, frais et bon marché, plusieurs adresses (Shibuya, Shinjuku).",2],
+   ["Kaitenzushi Nemuro Hanamaru (KITTE)","Sushi",1,"","Sushis sur tapis venus d'Hokkaidō, dans le centre commercial KITTE à Marunouchi.",3],
+   ["Yakitori sous les voies de Yūrakuchō","Yakitori",2,"","Izakaya nichés sous les arches du chemin de fer, ambiance d'après-guerre.",2],
+   ["Harmonica Yokochō (Kichijōji)","Izakaya",2,"","Labyrinthe de petits bars et restos près de la gare de Kichijōji.",2],
+   ["Ebisu Yokochō","Izakaya",2,"","Allée couverte de minuscules restaurants, très animée le soir.",2],
+   ["Depachika d'Isetan Shinjuku","Street food",1,"","Le plus beau food hall de Tokyo : pâtisseries, bentos, fruits parfaits.",2],
+   ["Ameyoko (Ueno)","Street food",2,"","Marché populaire sous les voies : brochettes, fruits de mer, snacks bon marché.",3],
+   ["Gonpachi Nishi-Azabu","Izakaya",2,"","L'izakaya qui a inspiré la scène de Kill Bill, décor spectaculaire.",4]]}};
+
+function bankPool(k){k=k||kind;const titles=new Set(S.activities.filter(a=>a.city===city).map(a=>a.title.toLowerCase()));
+  const extra=k==="act"?(IDEAS[city]||[]).map(i=>[i[0],i[1],i[2],"",i[3]]):[];
+  const all=[...((BANK[city]||{})[k]||[]),...extra];const seen=new Set();
+  return all.filter(i=>{const t=i[0].toLowerCase();if(titles.has(t)||seen.has(t))return false;seen.add(t);return true})}
+let bankPick=[];
+function bankSheet(reshuffle){const pool=bankPool();const c=CITY[city];
+  if(reshuffle||!bankPick.length||bankPick.some(i=>!pool.includes(i))){const sh=[...pool].sort(()=>Math.random()-.5);bankPick=sh.slice(0,5)}
+  const list=bankPick.filter(i=>pool.includes(i));
+  sheet(`<h2>${kind==="resto"?"Où manger":"Idées"} à ${c.name}</h2><div class="sub">${pool.length} idée${pool.length>1?"s":""} pas encore dans votre liste. Infos à vérifier avant le départ.</div>
+  <div>${list.length?list.map(i=>`<div class="line"><div><b>${esc(i[0])}</b><small>${i[5]?crowdHtml(i[5])+" ":""}${esc(i[1])}${i[2]?" · "+esc((DURS.find(d=>d[0]===i[2])||[0,i[2]+" h"])[1]):""}${i[3]?" · ≈ "+yen(i[3]):""}</small><small>${esc(i[4])}</small></div><button type="button" class="btn ghost small" data-a="bankadd" data-id="${esc(i[0])}">Ajouter</button></div>`).join(""):`<div class="empty">Vous avez déjà tout ajouté pour ${c.name} !</div>`}</div>
+  <div class="foot">${pool.length>list.length?`<button type="button" class="btn ghost" data-a="bankmore">↻ Autres idées</button>`:"<span></span>"}<button type="button" class="btn" data-a="close">Fermer</button></div>`)}
 /* ---------- events ---------- */
 function setTab(t){tab=t;try{localStorage.setItem("tabi-tab",t)}catch(_){}render();window.scrollTo(0,0);const v=$("#view");v.classList.add("anim");clearTimeout(setTab.t);setTab.t=setTimeout(()=>v.classList.remove("anim"),400)}
 document.addEventListener("click",e=>{
@@ -735,12 +1102,16 @@ document.addEventListener("click",e=>{
    case "fab":fabMenu();break;
    case "city":city=id;try{localStorage.setItem("tabi-city",city)}catch(_){}render();break;
    case "kind":kind=id;render();break;
+   case "actview":actView=id;try{localStorage.setItem("tabi-view",id)}catch(_){}render();break;
+   case "swvote":if(!me){pickMe();break}castSwipe(t.dataset.v);break;
+   case "swskip":passSwipe();break;
+   case "swundo":swUndo();break;
    case "filter":filter=id;render();break;
    case "planview":planView=id;render();break;
    case "more":more=id;render();break;
    case "ckall":ckAll=!ckAll;render();break;
-   case "govote":filter="tovote";setTab("acts");break;
-   case "open":if(act)fiche(act);break;
+   case "govote":actView="swipe";try{localStorage.setItem("tabi-view","swipe")}catch(_){}setTab("acts");break;
+   case "open":{const x=act||S.activities.find(y=>y.id===id);if(x)fiche(x);break}
    case "addact":actForm(null,"act");break;
    case "addresto":actForm(null,"resto");break;
    case "addshop":actForm(null,"shop");break;
@@ -749,8 +1120,12 @@ document.addEventListener("click",e=>{
    case "addck":if(adminOnly())break;ckForm();break;
    case "addexp":expForm();break;
    case "suggest":suggest();break;
+   case "setcrowd":{const x=S.activities.find(y=>y.id===id);if(!x)break;const v=Number(t.dataset.v);patch("activities",id,{crowd:crowdOf(x)===v&&x.crowd?"":v});toast(CROWD_TXT[v]);break}
+   case "bank":bankPick=[];bankSheet();break;
+   case "bankmore":bankSheet(true);break;
+   case "bankadd":{const i=bankPool().find(x=>x[0]===id);if(!i)return;save("activities",newId("a"),{kind,city,title:i[0],type:i[1],hours:i[2]||"",priceYen:i[3]===""?"":i[3],notes:i[4],crowd:i[5]||"",link:"",booking:"",bookBy:"",by:me||"p1",votes:{},day:"",slot:"",createdAt:Date.now(),fromBank:true});t.textContent="Ajouté ✓";t.disabled=true;toast("Ajouté à la liste de "+CITY[city].name);break}
    case "idea":{const i=IDEAS[city][+id];if(!i)return;save("activities",newId("a"),{kind:"act",city,title:i[0],type:i[1],hours:i[2],notes:i[3],priceYen:"",link:"",booking:"",bookBy:"",by:me||"p1",votes:me?{[me]:"up"}:{},day:"",slot:"",createdAt:Date.now()});toast("Ajoutée avec ton « J'adore »");break}
-   case "addsug":{const sg=window.__sug;const x=sg&&sg.list[+id];if(!x)return;save("activities",newId("a"),{kind:sg.kind,city:sg.city,title:String(x.title||""),type:String(x.type||""),hours:Number(x.hours)||"",priceYen:Number(x.priceYen)||"",notes:String(x.notes||""),link:"",booking:"",bookBy:"",by:me||"p1",votes:me?{[me]:"up"}:{},day:"",slot:"",createdAt:Date.now(),fromClaude:true});t.textContent="Ajouté";t.disabled=true;break}
+   case "addsug":{const sg=window.__sug;const x=sg&&sg.list[+id];if(!x)return;save("activities",newId("a"),{kind:sg.kind,city:sg.city,title:String(x.title||""),type:String(x.type||""),hours:Number(x.hours)||"",priceYen:Number(x.priceYen)||"",notes:String(x.notes||""),crowd:[1,2,3,4].includes(Number(x.crowd))?Number(x.crowd):"",link:"",booking:"",bookBy:"",by:me||"p1",votes:me?{[me]:"up"}:{},day:"",slot:"",createdAt:Date.now(),fromClaude:true});t.textContent="Ajouté";t.disabled=true;break}
    case "vote":if(!act)return;if(!me){pickMe();return}{const cur=(act.votes||{})[me];patch("activities",act.id,{votes:{[me]:cur===t.dataset.v?"":t.dataset.v}})}break;
    case "editact":{const x=S.activities.find(y=>y.id===id);if(x){openFiche=null;actForm(x)}}break;
    case "doplan":patch("activities",id,{day:$("#pDay").value,slot:$("#pSlot").value});toast($("#pDay").value?"Placé dans le planning":"Retiré du planning");break;
@@ -782,7 +1157,7 @@ document.addEventListener("submit",e=>{
   const f=e.target;e.preventDefault();const fd=new FormData(f);const g=k=>String(fd.get(k)??"").trim();const id=f.dataset.id;
   if(f.classList.contains("cmform")){const txt=g("t");if(!txt)return;if(!me){pickMe();return}save("comments",newId("c"),{act:f.dataset.act,by:me,text:txt,at:Date.now()});f.reset();document.activeElement&&document.activeElement.blur();return}
   if(f.id==="actForm"){const base=id?S.activities.find(a=>a.id===id):null;
-    const data={kind:f.dataset.kind||"act",city:g("city"),title:g("title"),type:g("type"),hours:num(g("hours")),priceYen:num(g("priceYen")),booking:g("booking"),bookBy:g("bookBy"),link:g("link"),notes:g("notes")};if(!data.title)return;
+    const data={kind:f.dataset.kind||"act",city:g("city"),title:g("title"),type:g("type"),hours:num(g("hours")),priceYen:num(g("priceYen")),booking:g("booking"),bookBy:g("bookBy"),link:g("link"),notes:g("notes"),crowd:num(g("crowd"))};if(!data.title)return;
     if(base){const {id:_,...rest}=base;save("activities",id,{...rest,...data})}else save("activities",newId("a"),{...data,by:me||"p1",votes:me?{[me]:"up"}:{},day:"",slot:"",createdAt:Date.now()});
     city=data.city;kind=data.kind;closeSheet();if(tab!=="acts")setTab("acts");else render();toast(base?"Modifié":"Ajouté avec ton « J'adore »");return}
   if(f.id==="trForm"){save("transports",id||newId("t"),{from:g("from"),to:g("to"),date:g("date"),time:g("time"),mode:g("mode"),priceYen:num(g("priceYen")),ref:g("ref"),notes:"",booked:g("booked")==="1"});closeSheet();toast("Trajet enregistré");return}
